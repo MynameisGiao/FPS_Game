@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8253150744430691047}
   - component: {fileID: 5815939428962124073}
-  - component: {fileID: 3925709949110855557}
+  - component: {fileID: 8506326346427824366}
   m_Layer: 5
   m_Name: HomeView
   m_TagString: Untagged
@@ -32,7 +32,6 @@ RectTransform:
   m_Children:
   - {fileID: 6981291694414501464}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -47,7 +46,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5598941907423475843}
   m_CullTransparentMesh: 1
---- !u!114 &3925709949110855557
+--- !u!114 &8506326346427824366
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -56,10 +55,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5598941907423475843}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 747b9fdc64573154db3bc4ca336b04c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 202b2be2db943f744bac6c5df6568257, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewIndex: 1
+  viewIndex: 2
 --- !u!1 &6853546153844622101
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,7 +91,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8253150744430691047}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}

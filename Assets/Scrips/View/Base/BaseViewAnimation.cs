@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-
+[RequireComponent(typeof(CanvasGroup))]
 public class BaseViewAnimation : MonoBehaviour
 {
     private CanvasGroup canvas_group;

@@ -11,23 +11,24 @@ public class BootLoader : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
         yield return new WaitForSeconds(1);
-       // ConfigManager.instance.InitConfig(InitData);
-       
-     
+        LoadSceneManager.instance.LoadSceneByName("Buffer", LoadSceneDone);
+        // ConfigManager.instance.InitConfig(InitData);
+
+
     }
-    private void InitData()
-    {
-        //DataController.instance.InitData(() =>
-        //{
-        //    LoadSceneManager.instance.LoadSceneByName("Buffer", LoadSceneDone);
-        //});
-    }
+    //private void InitData()
+    //{
+    //    //DataController.instance.InitData(() =>
+    //    //{
+    //    //    LoadSceneManager.instance.LoadSceneByName("Buffer", LoadSceneDone);
+    //    //});
+    //}
    
 
     public void LoadSceneDone()
     {
         Debug.LogError(" load scene done");
-        //ViewManager.instance.SwitchView(ViewIndex.HomeView);
+       // ViewManager.instance.SwitchView(ViewIndex.HomeView);
     }
   
     // Update is called once per frame
