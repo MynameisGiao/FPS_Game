@@ -5,6 +5,8 @@ using UnityEngine;
 public enum ViewIndex
 {
     EmptyView=1,
+    HomeView=2,
+    IngameView=3
 
 }
 public class ViewParam

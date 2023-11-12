@@ -11,16 +11,16 @@ public class BootLoader : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
         yield return new WaitForSeconds(1);
-        ConfigManager.instance.InitConfig(InitData);
+       // ConfigManager.instance.InitConfig(InitData);
        
      
     }
     private void InitData()
     {
-        DataController.instance.InitData(() =>
-        {
-            LoadSceneManager.instance.LoadSceneByName("Buffer", LoadSceneDone);
-        });
+        //DataController.instance.InitData(() =>
+        //{
+        //    LoadSceneManager.instance.LoadSceneByName("Buffer", LoadSceneDone);
+        //});
     }
    
 
