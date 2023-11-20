@@ -7,7 +7,9 @@ public enum ViewIndex
 {
     EmptyView=1,
     HomeView=2,
-    IngameView=3,
+    MissionView=3,
+    IngameView=4
+
     //ShopView=4
 }
 public class ViewParam
@@ -20,6 +22,7 @@ public class ViewConfig
     {
         ViewIndex.EmptyView,
         ViewIndex.HomeView,
+        ViewIndex.MissionView,
         ViewIndex.IngameView
     };
 }

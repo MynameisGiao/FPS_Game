@@ -9,8 +9,8 @@ public class HomeView : BaseView
         base.Setup(param);
         Debug.LogError("Home View!!!");
     }
-    public void ShowIngameView()
+    public void ShowMissionView()
     {
-        ViewManager.instance.SwitchView(ViewIndex.IngameView);
+        ViewManager.instance.SwitchView(ViewIndex.MissionView);
     }
 }

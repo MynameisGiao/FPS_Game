@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5181249544971852038}
   - component: {fileID: 7632900925057985727}
   - component: {fileID: 3402353693137064417}
+  - component: {fileID: 8841395811600573776}
   m_Layer: 0
   m_Name: BaseViewAnimation
   m_TagString: Untagged
@@ -89,6 +90,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 011081290028f524f8ef2867065cea2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!225 &8841395811600573776
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111726578001271273}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &3019773948157394191
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c375205f193889439cbab5873cfaa31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewIndex: 3
+  viewIndex: 4
 --- !u!1 &5320602943773550487
 GameObject:
   m_ObjectHideFlags: 0
