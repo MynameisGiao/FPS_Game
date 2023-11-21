@@ -1,18 +1,87 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ConfigMission : ScriptableObject
+[Serializable]
+public class ConfigMissionRecord
 {
-    // Start is called before the first frame update
-    void Start()
+    // id	stage	name	description	sceneName	waves	reward
+    [SerializeField]
+    private int id;
+    public int ID
     {
-        
+        get
+        {
+            return id;
+        }
     }
-
-    // Update is called once per frame
-    void Update()
+    [SerializeField]
+    private int stage;
+    public int Stage
     {
-        
+        get
+        {
+            return stage;
+        }
+    }
+    [SerializeField]
+    private string name;
+    public string Name
+    {
+        get
+        {
+            return name;
+        }
+    }
+    [SerializeField]
+    private string description;
+    public string Description
+    {
+        get
+        {
+            return description;
+        }
+    }
+    [SerializeField]
+    private string sceneName;
+    public string SceneName
+    {
+        get
+        {
+            return sceneName;
+        }
+    }
+    [SerializeField]
+    private string waves;
+    public List<int> Waves
+    {
+        get
+        {
+            string[] s = waves.Split(';');
+            List<int> ls = new List<int>();
+            foreach (string e in s)
+            {
+                ls.Add(int.Parse(e));
+            }
+            return ls;
+        }
+    }
+    [SerializeField]
+    private int reward;
+    public int Reward
+    {
+        get
+        {
+            return reward;
+        }
+    }
+}
+public class ConfigMission : BYDataTable<ConfigMissionRecord>
+{
+    public override ConfigCompare<ConfigMissionRecord> DefindCompare()
+    {
+        configCompare = new ConfigCompare<ConfigMissionRecord>("id");
+        return configCompare;
     }
 }
