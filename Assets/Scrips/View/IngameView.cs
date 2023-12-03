@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,8 +9,23 @@ public class IngameView : BaseView
         base.Setup(param);
         Debug.LogError("Ingame View!!!");
     }
-    public void ShowHomeView()
+    void Update()
     {
-        ViewManager.instance.SwitchView(ViewIndex.HomeView);
+        // Check for the "Escape" key
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            OnPause();
+        }
+    }
+    public void OnPause()
+    {
+        LoadSceneManager.instance.LoadSceneByIndex(1, () =>
+        {
+            ViewManager.instance.SwitchView(ViewIndex.MissionView);
+            // Chuyển trạng thái con trỏ chuột về bình thường khi chuyển về MissionView
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
+        });
     }
 }

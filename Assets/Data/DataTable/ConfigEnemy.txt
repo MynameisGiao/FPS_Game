@@ -1,0 +1,6 @@
+id	name	prefab	damage	hp	attack_rate	weapon
+1	TS_militias_urban_A	E_001	2	10	5	M416
+2	TS_militias_urban_B	E_002	2	10	4	AKM
+3	TS_militias_urban_D	E_003	3	15	3	Scar-L
+4	MilitaryFemale_01	E_004	4	20	2	M249
+5	GhillieSuit_01	E_005	5	30	10	Groza

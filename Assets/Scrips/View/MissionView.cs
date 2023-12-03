@@ -17,4 +17,15 @@ public class MissionView : BaseView
     {
         ViewManager.instance.SwitchView(ViewIndex.IngameView);
     }
+
+    public void OnPlayMission(int id)
+    {
+        ConfigMissionRecord cf_mission_record=ConfigManager.instance.configMission.GetRecordBykeySearch(id);
+        GameManager.instance.cur_cf_mission_rc = cf_mission_record;
+        Debug.LogError("Scene: " + cf_mission_record.SceneName);
+        LoadSceneManager.instance.LoadSceneByName(cf_mission_record.SceneName, () =>
+        {
+            ViewManager.instance.SwitchView(ViewIndex.IngameView);
+        });
+    }
 }

@@ -162,13 +162,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 635191258352805641}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7662575218142069744}
-  m_Father: {fileID: 50312810898647057}
+  m_Father: {fileID: 5397127395408999498}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -379,7 +379,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 787.82043, y: 186.21408}
+  m_AnchoredPosition: {x: 787.82043, y: 169}
   m_SizeDelta: {x: -963.1747, y: 34.746346}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &821481593781059397
@@ -499,8 +499,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 229.6295}
+  m_AnchoredPosition: {x: 0, y: 29}
+  m_SizeDelta: {x: 0, y: 184.4999}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &2632751844951060583
 CanvasRenderer:
@@ -543,9 +543,6 @@ RectTransform:
   m_Children:
   - {fileID: 8774715554121138437}
   - {fileID: 1643181914106174701}
-  - {fileID: 740519602848375098}
-  - {fileID: 5526114508164047972}
-  - {fileID: 5972492788383102126}
   m_Father: {fileID: 6780140946400779419}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -766,7 +763,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5526114508164047972}
+  - {fileID: 5972492788383102126}
+  - {fileID: 740519602848375098}
   m_Father: {fileID: 6780140946400779419}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -936,12 +936,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4477200428911982337}
         m_TargetAssemblyTypeName: MissionView, Assembly-CSharp
-        m_MethodName: ShowIngameView
-        m_Mode: 1
+        m_MethodName: OnPlayMission
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1070,12 +1070,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4477200428911982337}
         m_TargetAssemblyTypeName: MissionView, Assembly-CSharp
-        m_MethodName: ShowIngameView
-        m_Mode: 1
+        m_MethodName: OnPlayMission
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1279,12 +1279,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4477200428911982337}
         m_TargetAssemblyTypeName: MissionView, Assembly-CSharp
-        m_MethodName: ShowIngameView
-        m_Mode: 1
+        m_MethodName: OnPlayMission
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1747,8 +1747,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -3.88562, y: -24}
-  m_SizeDelta: {x: -96.8983, y: 201.5884}
+  m_AnchoredPosition: {x: -8, y: -10}
+  m_SizeDelta: {x: -173.9132, y: 184.1979}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9019110742713547690
 CanvasRenderer:
@@ -2648,7 +2648,7 @@ RectTransform:
   - {fileID: 2112295003028114595}
   - {fileID: 2949329836758688665}
   - {fileID: 4165042829678426087}
-  m_Father: {fileID: 50312810898647057}
+  m_Father: {fileID: 5397127395408999498}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2845,7 +2845,7 @@ RectTransform:
   - {fileID: 8427142548608254470}
   - {fileID: 1303587337445936336}
   - {fileID: 2837907368204978460}
-  m_Father: {fileID: 50312810898647057}
+  m_Father: {fileID: 5397127395408999498}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -2984,12 +2984,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4477200428911982337}
         m_TargetAssemblyTypeName: MissionView, Assembly-CSharp
-        m_MethodName: ShowIngameView
-        m_Mode: 1
+        m_MethodName: OnPlayMission
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

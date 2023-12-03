@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class GameManager : BYSingletonMono<GameManager>
 {
-    //public ConfigMissionRecord cur_cf_mission;
+    public ConfigMissionRecord cur_cf_mission_rc;
 }

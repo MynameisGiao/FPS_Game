@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/Buffer.unity
     guid: e6bca3d998e473c40a43794716c98720
+  - enabled: 1
+    path: Assets/Scene/Ingame_01.unity
+    guid: 36d1bc2a6703d504ba0e92b9e9550aa8
+  - enabled: 1
+    path: Assets/Scene/Ingame_02.unity
+    guid: def60236e3c1e4f4aa47ca2fa32b0479
   m_configObjects: {}

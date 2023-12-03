@@ -12,3 +12,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7659e8a255aa47469aa50d11bcbf39f, type: 3}
   m_Name: ConfigMission
   m_EditorClassIdentifier: 
+  records:
+  - id: 1
+    stage: 1
+    name: Survival
+    description: Survival
+    sceneName: Ingame_01
+    enemies: 1;2;3
+    reward: 50
+  - id: 2
+    stage: 1
+    name: Left 4 dead
+    description: Left 4 dead
+    sceneName: Ingame_02
+    enemies: 2;2;3;3
+    reward: 55
+  - id: 3
+    stage: 1
+    name: Kill shot
+    description: Kill shot
+    sceneName: Ingame_01
+    enemies: 1;2;3;4
+    reward: 60
+  - id: 4
+    stage: 2
+    name: Industry
+    description: Industry
+    sceneName: Ingame_02
+    enemies: 2;3;4;4
+    reward: 65
+  - id: 5
+    stage: 2
+    name: Nuclear
+    description: Nuclear
+    sceneName: Ingame_01
+    enemies: 1;3;4;4;5
+    reward: 70
+  - id: 6
+    stage: 2
+    name: last day on Earth
+    description: last day on Earth
+    sceneName: Ingame_02
+    enemies: 3;4;5;6
+    reward: 75
