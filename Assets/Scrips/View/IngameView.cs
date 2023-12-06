@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.EventSystems;
 public class IngameView : BaseView
 {
+
     public override void Setup(ViewParam param)
     {
         base.Setup(param);
@@ -17,15 +18,15 @@ public class IngameView : BaseView
             OnPause();
         }
     }
+
     public void OnPause()
     {
         LoadSceneManager.instance.LoadSceneByIndex(1, () =>
         {
             ViewManager.instance.SwitchView(ViewIndex.MissionView);
-            // Chuyển trạng thái con trỏ chuột về bình thường khi chuyển về MissionView
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
 
         });
     }
+
+   
 }

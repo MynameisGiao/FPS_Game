@@ -12,7 +12,7 @@ public class LoadSceneManager : BYSingletonMono<LoadSceneManager>
     public Image image_progress;
     public Text progress_lb;
     public float time_delay = 0.05f;
-    public float width = 1980;
+    public float width = 1700;
     // Update is called once per frame
     /// <summary>
     /// Load new scene by name
@@ -29,7 +29,7 @@ public class LoadSceneManager : BYSingletonMono<LoadSceneManager>
         AsyncOperation async = SceneManager.LoadSceneAsync(scene_name, LoadSceneMode.Single);
         WaitForSeconds wait_s = new WaitForSeconds(time_delay);
         int count = 0;
-        while (count < 100)
+        while (count <= 100)
         {
             yield return wait_s;
             count++;
