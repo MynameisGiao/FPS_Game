@@ -10,6 +10,7 @@ public class CameraControl : MonoBehaviour
     public float speed = 5;
     public Transform character_trans;
     public Transform root_cam;
+    public Camera cam;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,5 +27,10 @@ public class CameraControl : MonoBehaviour
         character_trans.localRotation = q_horizontal;
         Quaternion q_vertical = Quaternion.Euler(vertical,0, 0);
         root_cam.localRotation = q_vertical;
+    }
+
+    public void AddRecoilGun(float damp)
+    {
+        vertical -= damp;
     }
 }

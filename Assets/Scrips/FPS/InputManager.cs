@@ -15,6 +15,7 @@ public class InputManager : BYSingletonMono<InputManager>
     public UnityEvent OnJump;
     public UnityEvent <bool> OnFire;
     public UnityEvent OnReload;
+    public bool isKeyBoardMove;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,9 +40,14 @@ public class InputManager : BYSingletonMono<InputManager>
         {
 
         }
-        float x=Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-        move_Dir=new Vector3 (x,0,z);
+
+        if(isKeyBoardMove)
+        {
+            float x = Input.GetAxis("Horizontal");
+            float z = Input.GetAxis("Vertical");
+            move_Dir = new Vector3(x, 0, z);
+        }
+       
 
         // ChangeGun
         if(Input.GetKeyDown(KeyCode.C)) 
@@ -71,14 +77,23 @@ public class InputManager : BYSingletonMono<InputManager>
         }
 
         // Fire
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             OnFire?.Invoke(true);
         }
-        else if(Input.GetMouseButtonUp(0))
+        else if (Input.GetKeyUp(KeyCode.E))
         {
             OnFire?.Invoke(false);
         }
+
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    OnFire?.Invoke(true);
+        //}
+        //else if(Input.GetMouseButtonUp(0))
+        //{
+        //    OnFire?.Invoke(false);
+        //}
 
         // Reload
         if (Input.GetKeyDown(KeyCode.R))
@@ -90,5 +105,17 @@ public class InputManager : BYSingletonMono<InputManager>
     private void OnDestroy()
     {
         OnChangeGun.RemoveAllListeners();
+    }
+
+    public void SetMoveDir(Vector2 move)
+    {
+        if (!isKeyBoardMove)
+        {
+
+            float x = move.x;
+            float z = move.y;
+            move_Dir = new Vector3(x, 0, z);
+        }
+
     }
 }
