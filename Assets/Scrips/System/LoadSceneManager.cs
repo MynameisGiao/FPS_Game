@@ -73,5 +73,11 @@ public class LoadSceneManager : BYSingletonMono<LoadSceneManager>
         callback?.Invoke();
         ui_object.SetActive(false);
     }
-    
+
+    // Restart
+    public void ReloadCurrentScene()
+    {
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        LoadSceneByName(currentSceneName, null);
+    }
 }

@@ -1,0 +1,9 @@
+id	name	prefab	rof	clipsize	total	damage	recoil
+1	AK	AK	0.15	30	800	20	0.25
+2	HandGun	HandGun	0.3	9	200	9	0.2
+3	Sniper	Sniper	0.6	7	100	50	0.3
+4	M416	M416	0.15	30	800	20	0.2
+5	Groza	Groza	0.1	30	800	25	0.15
+6	Scar_L	Scar_L	0.15	30	800	20	0.2
+7	ShotGun	ShotGun	0.4	5	800	35	1
+8	Vector	Vector	0.1	20	800	18	0.18

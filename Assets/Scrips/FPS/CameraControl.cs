@@ -11,12 +11,16 @@ public class CameraControl : MonoBehaviour
     public Transform character_trans;
     public Transform root_cam;
     public Camera cam;
+    public float fov;
     // Start is called before the first frame update
     void Start()
     {
         
     }
-
+    private void Update()
+    {
+        cam.fieldOfView = Mathf.Lerp(cam.fieldOfView,fov,Time.deltaTime*5);
+    }
     // Update is called once per frame
     void LateUpdate()
     {

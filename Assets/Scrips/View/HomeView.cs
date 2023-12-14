@@ -14,6 +14,15 @@ public class HomeView : BaseView
     {
         ViewManager.instance.SwitchView(ViewIndex.MissionView);
     }
+    public void ShowShopView()
+    {
+        ViewManager.instance.SwitchView(ViewIndex.ShopView);
+    }
+    public void OnSetting()
+    {
+        DialogManager.instance.ShowDialog(DialogIndex.SettingDialog);
+
+    }
 }
 
 

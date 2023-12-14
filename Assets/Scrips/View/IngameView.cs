@@ -4,13 +4,15 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 public class IngameView : BaseView
 {
-
     public override void Setup(ViewParam param)
     {
         base.Setup(param);
         Debug.LogError("Ingame View!!!");
+       
     }
-    void Update()
+
+ 
+        void Update()
     {
         // Check for the "Escape" key
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -21,12 +23,9 @@ public class IngameView : BaseView
 
     public void OnPause()
     {
-        LoadSceneManager.instance.LoadSceneByIndex(1, () =>
-        {
-            ViewManager.instance.SwitchView(ViewIndex.MissionView);
-
-        });
+        DialogManager.instance.ShowDialog(DialogIndex.PauseDialog);
+       
     }
+    
 
-   
 }

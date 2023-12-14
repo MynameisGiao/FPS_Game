@@ -14,21 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   records:
   - id: 1
-    name: SportsBraFemale_01
+    name: TS_militias_urban_A
     prefab: E_001
     damage: 2
     hp: 10
     attack_rate: 5
     weapon: M416
   - id: 2
-    name: RedneckMale_01
+    name: TS_militias_urban_B
     prefab: E_002
     damage: 2
     hp: 10
     attack_rate: 4
     weapon: AKM
   - id: 3
-    name: MilitaryMale_01
+    name: TS_militias_urban_D
     prefab: E_003
     damage: 3
     hp: 15

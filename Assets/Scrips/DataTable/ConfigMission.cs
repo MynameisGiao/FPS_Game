@@ -34,15 +34,7 @@ public class ConfigMissionRecord
             return name;
         }
     }
-    [SerializeField]
-    private string description;
-    public string Description
-    {
-        get
-        {
-            return description;
-        }
-    }
+    
     [SerializeField]
     private string sceneName;
     public string SceneName

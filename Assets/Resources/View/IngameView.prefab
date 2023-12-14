@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 739132384071185838}
   - component: {fileID: 742689180549813410}
   m_Layer: 5
-  m_Name: 'Btn_Setting '
+  m_Name: Btn_Pause
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -269,7 +269,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6ac3291d6f9545c43a6fcf38dc6b373d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 16deb6578022fed4798c635830379a1a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -74,11 +74,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -117,6 +118,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 1
+  swizzle: 50462976
   cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
@@ -129,8 +131,9 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
@@ -141,8 +144,9 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Server
     maxTextureSize: 2048
@@ -153,8 +157,9 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
@@ -165,13 +170,14 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: assault_rifle_01_icon
+      name: AK
       rect:
         serializedVersion: 2
         x: 0
@@ -179,7 +185,7 @@ TextureImporter:
         width: 819.2
         height: 819.2
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -192,7 +198,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: assault_rifle_02_icon
+      name: M416
       rect:
         serializedVersion: 2
         x: 819
@@ -200,7 +206,7 @@ TextureImporter:
         width: 819.2
         height: 819.2
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -213,7 +219,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: assault_rifle_03_icon
+      name: Scar_L
       rect:
         serializedVersion: 2
         x: 1638
@@ -221,7 +227,7 @@ TextureImporter:
         width: 819.2
         height: 819.2
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -242,7 +248,7 @@ TextureImporter:
         width: 819.2
         height: 819.2
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -255,7 +261,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: handgun_01_icon
+      name: HandGun
       rect:
         serializedVersion: 2
         x: 3276
@@ -263,7 +269,7 @@ TextureImporter:
         width: 819.2
         height: 819.2
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -284,7 +290,7 @@ TextureImporter:
         width: 819.2
         height: 819.2
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -305,7 +311,7 @@ TextureImporter:
         width: 819.2
         height: 819.2
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -326,7 +332,7 @@ TextureImporter:
         width: 819.2
         height: 819.2
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -347,7 +353,7 @@ TextureImporter:
         width: 819.2
         height: 819.2
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -360,7 +366,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shotgun_01_icon
+      name: ShotGun
       rect:
         serializedVersion: 2
         x: 3276
@@ -368,7 +374,7 @@ TextureImporter:
         width: 819.2
         height: 819.2
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -381,7 +387,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: smg_01_icon
+      name: Vector
       rect:
         serializedVersion: 2
         x: 0
@@ -389,7 +395,7 @@ TextureImporter:
         width: 819.2
         height: 819.2
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -410,7 +416,7 @@ TextureImporter:
         width: 819.2
         height: 819.2
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -431,7 +437,7 @@ TextureImporter:
         width: 819
         height: 819
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -444,7 +450,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: smg_04_icon
+      name: Groza
       rect:
         serializedVersion: 2
         x: 2457
@@ -452,7 +458,7 @@ TextureImporter:
         width: 819.2
         height: 819.2
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -473,7 +479,7 @@ TextureImporter:
         width: 819.2
         height: 819.2
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -486,7 +492,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sniper_01_icon
+      name: Sniper1
       rect:
         serializedVersion: 2
         x: 0
@@ -494,7 +500,7 @@ TextureImporter:
         width: 819.2
         height: 819.2
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -515,7 +521,7 @@ TextureImporter:
         width: 819.2
         height: 819.2
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -528,7 +534,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sniper_03_icon
+      name: Sniper
       rect:
         serializedVersion: 2
         x: 1638
@@ -536,7 +542,7 @@ TextureImporter:
         width: 819.2
         height: 819.2
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -551,7 +557,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 33eeab7dc708c8e42b98ed6ba557f7a5
     internalID: 0
     vertices: []
     indices: 
@@ -559,27 +565,26 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      assault_rifle_01_icon: 21300000
-      assault_rifle_02_icon: 21300002
-      assault_rifle_03_icon: 21300004
+      AK: 21300000
+      Groza: 21300026
+      HandGun: 21300008
+      M416: 21300002
+      Scar_L: 21300004
+      ShotGun: 21300018
+      Sniper: 21300034
+      Sniper1: 21300030
+      Vector: 21300020
       grenade_launcher_01_icon: 21300006
-      handgun_01_icon: 21300008
       handgun_02_icon: 21300010
       handgun_03_icon: 21300012
       handgun_04_icon: 21300014
       rocket_launcher_01_icon: 21300016
-      shotgun_01_icon: 21300018
-      smg_01_icon: 21300020
       smg_02_icon: 21300022
       smg_03_icon: 21300024
-      smg_04_icon: 21300026
       smg_05_icon: 21300028
-      sniper_01_icon: 21300030
       sniper_02_icon: 21300032
-      sniper_03_icon: 21300034
-  spritePackingTag: 
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

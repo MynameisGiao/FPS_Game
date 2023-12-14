@@ -10,6 +10,7 @@ public class MissionManager : BYSingletonMono<MissionManager>
         cf_mission_rc = GameManager.instance.cur_cf_mission_rc;
         Debug.LogError("init mission: " + cf_mission_rc.Name);   
     }
+
     void Update()
     {
         

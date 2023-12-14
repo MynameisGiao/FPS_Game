@@ -7,11 +7,15 @@ public class ConfigManager : BYSingletonMono<ConfigManager>
 {
     public ConfigEnemy configEnemy;
     public ConfigMission configMission;
+    public ConfigGun configGun;
     //public ConfigWave configWave;
     //public ConfigShop configShop;
     //public ConfigUnit configUnit;
     //public ConfigUnitLevel configUnitLevel;
-   
+    private void Awake()
+    {
+        StartCoroutine(ProgressLoadConfig(null));
+    }
     public void InitConfig(Action callback)
     {
         StartCoroutine(ProgressLoadConfig(callback));
@@ -23,6 +27,9 @@ public class ConfigManager : BYSingletonMono<ConfigManager>
 
         configMission = Resources.Load("Config/ConfigMission", typeof(ScriptableObject)) as ConfigMission;
         yield return new WaitUntil(() => configMission != null);
+
+        configGun = Resources.Load("Config/ConfigGun", typeof(ScriptableObject)) as ConfigGun;
+        yield return new WaitUntil(() => configGun != null);
 
         //configWave = Resources.Load("Config/ConfigWave", typeof(ScriptableObject)) as ConfigWave;
         //yield return new WaitUntil(() => configWave != null);
