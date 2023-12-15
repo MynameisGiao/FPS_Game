@@ -20,9 +20,11 @@ public class HomeView : BaseView
     }
     public void OnSetting()
     {
-        DialogManager.instance.ShowDialog(DialogIndex.SettingDialog);
+
+        DialogManager.instance.ShowDialog(DialogIndex.SettingDialog,new SettingDialogParam { isShowPause=false});
 
     }
+    
 }
 
 

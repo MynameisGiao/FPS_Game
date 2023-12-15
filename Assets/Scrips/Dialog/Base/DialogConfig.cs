@@ -15,10 +15,10 @@ public class DialogParam
 {
 
 }
-//public class WinDialogParam: DialogParam
-//{
-//    public ConfigMissionRecord cf_mission;
-//}
+public class SettingDialogParam : DialogParam
+{
+    public bool isShowPause;
+}
 
 public class DialogConfig 
 {

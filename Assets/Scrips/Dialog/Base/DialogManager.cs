@@ -33,7 +33,9 @@ public class DialogManager : BYSingletonMono<DialogManager>
             callback?.Invoke();
         };
         dl.gameObject.SetActive(true);
-        dl.Setup(param);
+        dl.GetComponent<RectTransform>().SetAsLastSibling();
+
+       dl.Setup(param);
         dl.SendMessage("ShowDialog", (object)cb, SendMessageOptions.RequireReceiver);
         if(!ls_dialog.Contains(dl))
         {
@@ -72,5 +74,9 @@ public class DialogManager : BYSingletonMono<DialogManager>
         }
         ls_dialog.Clear();
     }
-   
+
+    internal void GetDialog<T>(DialogIndex settingDialog)
+    {
+        throw new NotImplementedException();
+    }
 }

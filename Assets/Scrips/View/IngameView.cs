@@ -24,7 +24,7 @@ public class IngameView : BaseView
     public void OnPause()
     {
         DialogManager.instance.ShowDialog(DialogIndex.PauseDialog);
-       
+
     }
     
 

@@ -17,23 +17,32 @@ public class SettingDialog : BaseDialog
     {
         
     }
-    //public override void OnShowDialog()
-    //{
-    //    base.OnShowDialog();
-    //    Time.timeScale = 0;
-    //}
-    //public override void OnHideDialog()
-    //{
-    //    base.OnHideDialog();
-    //    Time.timeScale = 1;
-    //}
+
+    private bool showPauseDialog = false;
+
+    public override void Setup(DialogParam param)
+    {
+        SettingDialogParam dialogParam = param as SettingDialogParam;
+        if (dialogParam != null)
+        {
+
+            showPauseDialog = dialogParam.isShowPause;
+        }
+        base.Setup(param);
+    }
     public void OnClose()
     {
         DialogManager.instance.HideDialog(DialogIndex.SettingDialog);
-        DialogManager.instance.ShowDialog(DialogIndex.PauseDialog);
 
-        // DialogManager.instance.HideDialog(DialogIndex.SettingDialog);
-
+        if (showPauseDialog)
+        {
+            DialogManager.instance.ShowDialog(DialogIndex.PauseDialog);
+        }
     }
-    
+
+    //// Set this property when you want to control whether to show Pause Dialog
+    //public void SetShowPauseDialog(bool show)
+    //{
+    //    showPauseDialog = show;
+    //}
 }

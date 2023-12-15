@@ -13,21 +13,11 @@ public class PauseDialog : BaseDialog
 
     }
 
-    // Update is called once per frame
     void Update()
     {
 
     }
-    //public override void OnShowDialog()
-    //{
-    //    base.OnShowDialog();
-    //    //Time.timeScale = 0;
-    //}
-    //public override void OnHideDialog()
-    //{
-    //    base.OnHideDialog();
-    //    //Time.timeScale = 1;
-    //}
+ 
     public void OnClose()
     {
         DialogManager.instance.HideDialog(DialogIndex.PauseDialog);
@@ -40,8 +30,7 @@ public class PauseDialog : BaseDialog
     }
     public void OnSettingDialog()
     {
-        DialogManager.instance.HideDialog(DialogIndex.PauseDialog);
-        DialogManager.instance.ShowDialog(DialogIndex.SettingDialog);
+        DialogManager.instance.ShowDialog(DialogIndex.SettingDialog, new SettingDialogParam { isShowPause = true });
     }
     public void OnRestart()
     {
