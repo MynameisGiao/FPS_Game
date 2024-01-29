@@ -19,32 +19,27 @@ MonoBehaviour:
     damage: 2
     hp: 10
     attack_rate: 5
-    weapon: M416
   - id: 2
     name: TS_militias_urban_B
     prefab: E_002
     damage: 2
     hp: 10
     attack_rate: 4
-    weapon: AKM
   - id: 3
     name: TS_militias_urban_D
     prefab: E_003
     damage: 3
     hp: 15
     attack_rate: 3
-    weapon: Scar-L
   - id: 4
     name: MilitaryFemale_01
     prefab: E_004
     damage: 4
     hp: 20
     attack_rate: 2
-    weapon: M249
   - id: 5
     name: GhillieSuit_01
     prefab: E_005
     damage: 5
     hp: 30
     attack_rate: 10
-    weapon: Groza
