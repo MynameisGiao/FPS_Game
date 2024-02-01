@@ -14,66 +14,98 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   records:
   - id: 1
-    name: AK
-    prefab: AK
-    rof: 0.15
-    clipsize: 30
-    total: 800
-    damage: 20
-    recoil: 0.25
-  - id: 2
     name: HandGun
+    image: HandGun_icon
     prefab: HandGun
     rof: 0.3
     clipsize: 9
     total: 200
     damage: 9
     recoil: 0.2
+    fov_normal: 45
+    fov_zoom: 35
+    price: 0
+  - id: 2
+    name: AK
+    image: AK_icon
+    prefab: AK
+    rof: 0.15
+    clipsize: 30
+    total: 800
+    damage: 20
+    recoil: 0.3
+    fov_normal: 45
+    fov_zoom: 30
+    price: 0
   - id: 3
     name: Sniper
+    image: Sniper_icon
     prefab: Sniper
     rof: 0.6
     clipsize: 7
     total: 100
     damage: 50
-    recoil: 0.3
+    recoil: 0.5
+    fov_normal: 45
+    fov_zoom: 20
+    price: 600
   - id: 4
     name: M416
+    image: M416_icon
     prefab: M416
     rof: 0.15
     clipsize: 30
     total: 800
     damage: 20
-    recoil: 0.2
+    recoil: 0.3
+    fov_normal: 45
+    fov_zoom: 30
+    price: 350
   - id: 5
     name: Groza
+    image: Groza_icon
     prefab: Groza
     rof: 0.1
     clipsize: 30
     total: 800
     damage: 25
-    recoil: 0.15
+    recoil: 0.2
+    fov_normal: 45
+    fov_zoom: 30
+    price: 500
   - id: 6
     name: Scar_L
+    image: Scar_L_icon
     prefab: Scar_L
     rof: 0.15
     clipsize: 30
     total: 800
     damage: 20
-    recoil: 0.2
+    recoil: 0.3
+    fov_normal: 45
+    fov_zoom: 30
+    price: 400
   - id: 7
     name: ShotGun
+    image: ShotGun_icon
     prefab: ShotGun
     rof: 0.4
     clipsize: 5
     total: 800
     damage: 35
     recoil: 1
+    fov_normal: 45
+    fov_zoom: 30
+    price: 280
   - id: 8
     name: Vector
+    image: Vector_icon
     prefab: Vector
     rof: 0.1
     clipsize: 20
     total: 800
     damage: 18
-    recoil: 0.18
+    recoil: 0.2
+    fov_normal: 45
+    fov_zoom: 30
+    price: 310

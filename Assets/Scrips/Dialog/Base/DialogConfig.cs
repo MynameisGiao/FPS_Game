@@ -7,17 +7,30 @@ public enum DialogIndex
     SettingDialog=1,
     WinDialog=2,
     FailDialog=3,
-    AvtDialog=4,
+    WeaponInfoDialog=4,
     QuitDialog=5,
-    PauseDialog =6
+    PauseDialog =6,
+    DeckEquipDialog =7
 }
 public class DialogParam
 {
 
 }
+public class WinDialogParam : DialogParam
+{
+    public ConfigMissionRecord cf_mission;
+}
 public class SettingDialogParam : DialogParam
 {
     public bool isShowPause;
+}
+public class WeaponInfoDialogParam : DialogParam
+{
+    public ConfigGunRecord cf_gun;
+}
+public class DeckEquipDialogParam : DialogParam
+{
+    public GunData gunData;
 }
 
 public class DialogConfig 
@@ -27,8 +40,9 @@ public class DialogConfig
         DialogIndex.SettingDialog,
         DialogIndex.WinDialog,
         DialogIndex.FailDialog,
-        DialogIndex.AvtDialog,
+        DialogIndex.WeaponInfoDialog,
         DialogIndex.QuitDialog,
         DialogIndex.PauseDialog,
+        DialogIndex.DeckEquipDialog,
     };
 }

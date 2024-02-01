@@ -34,7 +34,7 @@ public class LoadSceneManager : BYSingletonMono<LoadSceneManager>
             yield return wait_s;
             count++;
             progress_lb.text = count.ToString() + "%";
-            image_progress.rectTransform.sizeDelta = new Vector2(width * (float)count / 100f, 42);
+            image_progress.rectTransform.sizeDelta = new Vector2(width * (float)count / 100f, 20);
         }
         while (!async.isDone)
         {

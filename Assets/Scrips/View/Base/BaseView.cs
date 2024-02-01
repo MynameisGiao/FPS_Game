@@ -20,18 +20,31 @@ public class BaseView : MonoBehaviour
         viewAnimation.OnHideAnimation(() =>
         {
             gameObject.SetActive(false);
+            OnHideView();
             callback?.Invoke();
+           
         });
        
+    }
+    public virtual void OnShowView( )
+    {
+
     }
     private void ShowView(object val)
     {
         viewAnimation.OnShowAnimation(() =>
         {
             Action callback = (Action)val;
+            OnShowView();
+         
             callback?.Invoke();
+           
         });
         
     }
-    
+    public virtual void OnHideView()
+    {
+
+    }
+
 }

@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class ViewManager : BYSingletonMono<ViewManager>
 {
+    public event Action<BaseView> OnViewHide;
+    public event Action<BaseView> OnViewShow;
+
     public RectTransform anchor_view;
     private Dictionary<ViewIndex,BaseView> dic_View = new Dictionary<ViewIndex,BaseView>();
     public BaseView cur_view = null;
@@ -27,9 +30,10 @@ public class ViewManager : BYSingletonMono<ViewManager>
     {
         if(cur_view!=null)
         {
+            OnViewHide?.Invoke(cur_view);
             Action cb = () =>
             {
-              
+                
                 cur_view = dic_View[viewIndex];
                 ShowNewView(param, callback);
             };
@@ -46,7 +50,7 @@ public class ViewManager : BYSingletonMono<ViewManager>
     {
         cur_view.gameObject.SetActive(true);
         cur_view.Setup(param);
-        
+        OnViewShow?.Invoke(cur_view);
         Action cb = () =>
         {
             callback?.Invoke();

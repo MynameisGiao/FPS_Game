@@ -92,7 +92,7 @@ public class InputManager : BYSingletonMono<InputManager>
         }
        
 
-        // ChangeGun
+        // ChangeDeck
         if(Input.GetKeyDown(KeyCode.C)) 
         {
             OnChangeGun?.Invoke();

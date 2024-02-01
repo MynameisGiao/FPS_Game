@@ -99,6 +99,8 @@ public class WeaponBehavior : MonoBehaviour
         total = weaponData.cf.Total;
         rof = weaponData.cf.ROF;
         recoil=weaponData.cf.Recoil;
+        fov_normal = weaponData.cf.Fov_normal;
+        fov_zoom = weaponData.cf.Fov_zoom;
         number_bullet = clip_Size;
     }
     // Update is called once per frame

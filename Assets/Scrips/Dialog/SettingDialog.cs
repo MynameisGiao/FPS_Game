@@ -40,9 +40,5 @@ public class SettingDialog : BaseDialog
         }
     }
 
-    //// Set this property when you want to control whether to show Pause Dialog
-    //public void SetShowPauseDialog(bool show)
-    //{
-    //    showPauseDialog = show;
-    //}
+    
 }

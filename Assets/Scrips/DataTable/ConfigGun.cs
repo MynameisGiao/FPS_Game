@@ -1,5 +1,9 @@
-using System;
+﻿using System;
+using System.Collections.Generic;
+using UnityEditor.VersionControl;
 using UnityEngine;
+using UnityEngine.U2D;
+
 [Serializable]
 public class ConfigGunRecord
 {
@@ -23,6 +27,15 @@ public class ConfigGunRecord
         }
     }
 
+    [SerializeField]
+    private string image;
+    public string Image
+    {
+        get
+        {
+            return image;
+        }
+    }
     [SerializeField]
     private string prefab;
     public string Prefab
@@ -82,6 +95,38 @@ public class ConfigGunRecord
         }
 
     }
+
+    [SerializeField]
+    private int fov_normal;
+    public int  Fov_normal
+    {
+        get
+        {
+            return fov_normal;
+        }
+
+    }
+
+    [SerializeField]
+    private int fov_zoom;
+    public int Fov_zoom
+    {
+        get
+        {
+            return fov_zoom;
+        }
+
+    }
+
+    [SerializeField]
+    private int price;
+    public int Price
+    {
+        get
+        {
+            return price;
+        }
+    }
 }
 public class ConfigGun : BYDataTable<ConfigGunRecord>
 {
@@ -91,5 +136,26 @@ public class ConfigGun : BYDataTable<ConfigGunRecord>
         return configCompare;
     }
 
+    public List<ConfigGunRecord> GetGunCollection() // lấy ra ds súng trừ những cây đã select (thuộc deck)
+    {
+        List<GunData> decks = DataController.instance.GetDeck();
 
+        List<ConfigGunRecord> ls=new List<ConfigGunRecord>();
+        foreach(ConfigGunRecord x in records)
+        {
+            bool isInDeck = false;
+            foreach(GunData d in decks)
+            {
+                if(d.id==x.ID)
+                {
+                    isInDeck = true;
+                }
+            }
+            if(isInDeck == false)
+            {
+                ls.Add(x);
+            }
+        }
+        return ls;
+    }
 }

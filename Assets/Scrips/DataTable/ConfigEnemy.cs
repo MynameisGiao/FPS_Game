@@ -61,15 +61,7 @@ public class ConfigEnemyRecord
             return attack_rate;
         }
     }
-    [SerializeField]
-    private string weapon;
-    public string Weapon
-    {
-        get
-        {
-            return weapon;
-        }
-    }
+   
 }
 public class ConfigEnemy : BYDataTable<ConfigEnemyRecord>
 {

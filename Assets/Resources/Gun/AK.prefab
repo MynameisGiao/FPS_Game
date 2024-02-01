@@ -165,7 +165,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 39.99991, y: 39.99991}
+  m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7187760494466581922
 CanvasRenderer:
@@ -11360,11 +11360,14 @@ MonoBehaviour:
   sfx_reload_left: {fileID: 8300000, guid: 726c58e582575e740bb353b60e4c23de, type: 3}
   sfx_reload_outof: {fileID: 8300000, guid: 9c6674d04c09f37439f8dc0cbdab310a, type: 3}
   sfx_ready: {fileID: 8300000, guid: 41bb8109f3cf23e48ac00ddc339cbd5d, type: 3}
+  sfx_reload_open: {fileID: 0}
+  sfx_reload_insert: {fileID: 0}
+  sfx_reload_close: {fileID: 0}
   min_accuracy: 10
   max_accuracy: 40
   cur_accuracy: 0
-  drop_accuracy: 0
-  recvoer_accuracy: 0
+  drop_accuracy: 15
+  recvoer_accuracy: 0.8
   recoil: 0.2
   mask:
     serializedVersion: 2
@@ -11374,8 +11377,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isSniper: 0
-  fov_normal: 45
-  fov_zoom: 30
+  isShotGun: 0
+  fov_normal: 0
+  fov_zoom: 0
+  model: {fileID: 0}
+  bps: 1
 --- !u!82 &8851002756561645718
 AudioSource:
   m_ObjectHideFlags: 0
@@ -17782,7 +17788,7 @@ Transform:
   m_GameObject: {fileID: 7607868511037475388}
   serializedVersion: 2
   m_LocalRotation: {x: -0.9583127, y: 0.008061047, z: 0.0071677375, w: -0.285518}
-  m_LocalPosition: {x: 0.002, y: 0.515, z: 0.66}
+  m_LocalPosition: {x: 0.002, y: 0.527, z: 0.678}
   m_LocalScale: {x: 0.2000001, y: 0.19999996, z: 0.20000002}
   m_ConstrainProportionsScale: 0
   m_Children:

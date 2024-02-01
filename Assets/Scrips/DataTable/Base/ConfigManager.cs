@@ -8,7 +8,7 @@ public class ConfigManager : BYSingletonMono<ConfigManager>
     public ConfigEnemy configEnemy;
     public ConfigMission configMission;
     public ConfigGun configGun;
-    //public ConfigWave configWave;
+    public ConfigWave configWave;
     //public ConfigShop configShop;
     //public ConfigUnit configUnit;
     //public ConfigUnitLevel configUnitLevel;
@@ -31,8 +31,8 @@ public class ConfigManager : BYSingletonMono<ConfigManager>
         configGun = Resources.Load("Config/ConfigGun", typeof(ScriptableObject)) as ConfigGun;
         yield return new WaitUntil(() => configGun != null);
 
-        //configWave = Resources.Load("Config/ConfigWave", typeof(ScriptableObject)) as ConfigWave;
-        //yield return new WaitUntil(() => configWave != null);
+        configWave = Resources.Load("Config/ConfigWave", typeof(ScriptableObject)) as ConfigWave;
+        yield return new WaitUntil(() => configWave != null);
 
         //configShop = Resources.Load("Config/ConfigShop", typeof(ScriptableObject)) as ConfigShop;
         //yield return new WaitUntil(() => configShop != null);

@@ -6,7 +6,7 @@ using UnityEngine;
 [Serializable]
 public class ConfigMissionRecord
 {
-    // id	stage	name	description	sceneName	enemies	reward
+    // id	stage	name	description	sceneName	wave	reward
     [SerializeField]
     private int id;
     public int ID
@@ -44,14 +44,14 @@ public class ConfigMissionRecord
             return sceneName;
         }
     }
+   
     [SerializeField]
-    private string enemies;
-    public List<int> Enemies
-
+    private string waves;
+    public List<int> Waves
     {
         get
         {
-            string[] s = enemies.Split(';');
+            string[] s = waves.Split(';');
             List<int> ls = new List<int>();
             foreach (string e in s)
             {
