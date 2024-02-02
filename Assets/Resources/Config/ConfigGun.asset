@@ -43,7 +43,7 @@ MonoBehaviour:
     prefab: Sniper
     rof: 0.6
     clipsize: 7
-    total: 100
+    total: 200
     damage: 50
     recoil: 0.5
     fov_normal: 45

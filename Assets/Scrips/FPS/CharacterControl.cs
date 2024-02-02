@@ -46,7 +46,9 @@ public class CharacterControl : MonoBehaviour
         move_dir.Normalize();
         // v=v0 + at;
         vel_y=vel_y - 9.8f*Time.deltaTime;
-        characterController_.Move(move_dir * Time.deltaTime *2.5f* speed);
+
+        characterController_.Move(move_dir * Time.deltaTime *3.0f* speed);
+        Debug.LogError("Aloooo"+ move_dir * Time.deltaTime * 3.0f * speed);
 
     }
 }

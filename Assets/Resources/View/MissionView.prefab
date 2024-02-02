@@ -1438,7 +1438,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sniper Battling
+  m_text: Normal Battling
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8018a476a4436754c8a080d91339be06, type: 2}
   m_sharedMaterial: {fileID: 7409485994217783921, guid: 8018a476a4436754c8a080d91339be06, type: 2}

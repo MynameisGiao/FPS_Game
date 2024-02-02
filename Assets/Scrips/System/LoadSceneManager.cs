@@ -40,7 +40,7 @@ public class LoadSceneManager : BYSingletonMono<LoadSceneManager>
         {
             yield return wait_s;
             progress_lb.text = ((int)(async.progress * 100)).ToString() + "%";
-            image_progress.rectTransform.sizeDelta = new Vector2(width * async.progress, 42);
+            image_progress.rectTransform.sizeDelta = new Vector2(width * async.progress, 20);
         }
         callback?.Invoke();
         ui_object.SetActive(false);
@@ -61,14 +61,14 @@ public class LoadSceneManager : BYSingletonMono<LoadSceneManager>
             count++;
             progress_lb.text = count.ToString() + "%";
             // image_progress.fillAmount = (float)count / 100f;
-            image_progress.rectTransform.sizeDelta = new Vector2(width * (float)count / 100f, 42);
+            image_progress.rectTransform.sizeDelta = new Vector2(width * (float)count / 100f, 20);
         }
         while (!async.isDone)
         {
             yield return wait_s;
             progress_lb.text = ((int)(async.progress * 100)).ToString() + "%";
             //image_progress.fillAmount = async.progress;
-            image_progress.rectTransform.sizeDelta = new Vector2(width * async.progress, 42);
+            image_progress.rectTransform.sizeDelta = new Vector2(width * async.progress, 20);
         }
         callback?.Invoke();
         ui_object.SetActive(false);

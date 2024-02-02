@@ -14,32 +14,74 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   records:
   - id: 1
-    name: TS_militias_urban_A
-    prefab: E_001
-    damage: 2
-    hp: 10
-    attack_rate: 5
-  - id: 2
-    name: TS_militias_urban_B
-    prefab: E_002
-    damage: 2
-    hp: 10
-    attack_rate: 4
-  - id: 3
-    name: TS_militias_urban_D
-    prefab: E_003
-    damage: 3
-    hp: 15
-    attack_rate: 3
-  - id: 4
-    name: MilitaryFemale_01
-    prefab: E_004
-    damage: 4
-    hp: 20
-    attack_rate: 2
-  - id: 5
     name: GhillieSuit_01
+    prefab: E_001
+    damage: 12
+    hp: 50
+    attack_rate: 20
+  - id: 2
+    name: MilitaryFemale_01
+    prefab: E_002
+    damage: 12
+    hp: 50
+    attack_rate: 20
+  - id: 3
+    name: TS_militias_underground_B
+    prefab: E_003
+    damage: 10
+    hp: 45
+    attack_rate: 18
+  - id: 4
+    name: TS_militias_underground_C
+    prefab: E_004
+    damage: 10
+    hp: 45
+    attack_rate: 18
+  - id: 5
+    name: TS_militias_urban_A
     prefab: E_005
-    damage: 5
-    hp: 30
-    attack_rate: 10
+    damage: 9
+    hp: 40
+    attack_rate: 17
+  - id: 6
+    name: TS_militias_urban_B
+    prefab: E_006
+    damage: 9
+    hp: 40
+    attack_rate: 17
+  - id: 7
+    name: TS_militias_urban_D
+    prefab: E_007
+    damage: 9
+    hp: 40
+    attack_rate: 17
+  - id: 8
+    name: TZ_F_Civ_09
+    prefab: E_008
+    damage: 8
+    hp: 35
+    attack_rate: 12
+  - id: 9
+    name: TZ_F_Civ_12
+    prefab: E_009
+    damage: 8
+    hp: 35
+    attack_rate: 12
+  - id: 10
+    name: TZ_Hulk_04_infected
+    prefab: E_010
+    damage: 8
+    hp: 35
+    attack_rate: 15
+  - id: 11
+    name: TZ_M_Civ_21
+    prefab: E_011
+    damage: 8
+    hp: 35
+    attack_rate: 12
+  - id: 12
+    name: TZ_Tank_03
+    prefab: E_012
+    damage: 8
+    hp: 35
+    attack_rate: 15

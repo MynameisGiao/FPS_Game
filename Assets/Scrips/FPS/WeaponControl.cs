@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -13,11 +13,22 @@ public class WeaponControl : MonoBehaviour
     public Transform anchor_gun;    
     public UnityEvent<WeaponBehavior> OnGunChangeEvent;
     // Start is called before the first frame update
-    IEnumerator Start()
+
+    // Lấy gun_ids từ GetDeck thay vì sử dụng list được khai báo
+    
+IEnumerator Start()
     {
         yield return  new WaitUntil(()=>SceneManager.GetActiveScene().buildIndex>1);
 
         yield return new WaitForSeconds(3);
+
+        List<GunData> deck = DataController.instance.GetDeck();
+        gun_ids = new List<int>();
+
+        foreach (GunData gunData in deck)
+        {
+            gun_ids.Add(gunData.id);
+        }
         foreach (int id in gun_ids)
         {
             ConfigGunRecord cf = ConfigManager.instance.configGun.GetRecordBykeySearch(id);

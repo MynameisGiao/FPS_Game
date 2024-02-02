@@ -1,4 +1,4 @@
-using System.Collections;
+Ôªøusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,16 +8,16 @@ public class DeckEquipDialog : BaseDialog
     public Image weapon_Icon;
     public Text name_lb;
 
-    public List<WeaponItemEquip> deck_items; // item trong deck l‡ weapon
+    public List<WeaponItemEquip> deck_items; // item trong deck l√† weapon
     public GunData cur_GunData;
-    
+
     public override void Setup(DialogParam param)
     {
         DeckEquipDialogParam dl_param = (DeckEquipDialogParam)param;
         cur_GunData = dl_param.gunData;
 
         List<GunData> decks = DataController.instance.GetDeck();
-        Debug.LogError("V‡o DECK!!!!! " + decks.Count);
+        Debug.LogError("V√†o DECK!!!!! " + decks.Count);
         for (int i = 0; i < decks.Count; i++)
         {
             deck_items[i].Setup(decks[i], cur_GunData,i);

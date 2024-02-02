@@ -22,7 +22,6 @@ public class WinDialog : BaseDialog
     {
         base.Setup(param);
         WinDialogParam dl_param = (WinDialogParam)param;
-        //Debug.LogError(" mission : " + dl_param.cf_mission.ID);
         //coin_lb.text = dl_param.cf_mission.Reward.ToString();
 
         // Gán giá trị cho config_gun
