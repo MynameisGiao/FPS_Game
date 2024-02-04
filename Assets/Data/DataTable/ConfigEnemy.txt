@@ -1,6 +1,6 @@
 id	name	prefab	damage	hp	attack_rate
-1	GhillieSuit_01	E_001	12	50	20
-2	MilitaryFemale_01	E_002	12	50	20
+1	TS_militias_jungle_E	E_001	12	50	20
+2	TS_militias_jungle_D	E_002	12	50	20
 3	TS_militias_underground_B	E_003	10	45	18
 4	TS_militias_underground_C	E_004	10	45	18
 5	TS_militias_urban_A	E_005	9	40	17

@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   records:
   - id: 1
-    name: GhillieSuit_01
+    name: TS_militias_jungle_E
     prefab: E_001
     damage: 12
     hp: 50
     attack_rate: 20
   - id: 2
-    name: MilitaryFemale_01
+    name: TS_militias_jungle_D
     prefab: E_002
     damage: 12
     hp: 50

@@ -8,10 +8,12 @@ public class ConfigScene : BYSingletonMono<ConfigScene>
 {
     [SerializeField]
     private List<Transform> enemy_spawns;
-
+    [SerializeField]
+     private List<Transform> patrolling_points;
+   
     //public Transform GetEnemySpawnPoint()
     //{
-    //    int index =UnityEngine.Random.Range(0,enemy_spawns.Count);
+    //    int index = UnityEngine.Random.Range(0, enemy_spawns.Count);
     //    return enemy_spawns[index];
 
     //    //return enemy_spawns.OrderBy(x => Guid.NewGuid()).FirstOrDefault();
@@ -46,4 +48,13 @@ public class ConfigScene : BYSingletonMono<ConfigScene>
 
         return selectedSpawnPoint;
     }
+   
+    public Transform GetRandomPatrolling()
+    {
+        int index = UnityEngine.Random.Range(0, patrolling_points.Count);
+        return patrolling_points[index];
+
+    }
 }
+
+
