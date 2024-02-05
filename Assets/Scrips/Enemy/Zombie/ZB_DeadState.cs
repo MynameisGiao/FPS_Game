@@ -7,5 +7,5 @@ using System;
 public class ZB_DeadState : FSM_State
 {
     [NonSerialized]
-    public Zombie parent;
+    public ZombieControl parent;
 }

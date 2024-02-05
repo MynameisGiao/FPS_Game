@@ -12,7 +12,7 @@ public class ZombieDataBinding : MonoBehaviour
             animator.SetFloat(Anim_K_Speed, value);
         }
     }
-    public bool Atttack
+    public bool Attack
     {
         set
         {

@@ -8,7 +8,7 @@ using UnityEngine;
 public class ZB_StartState : FSM_State
 {
     [NonSerialized]
-    public Zombie parent;
+    public ZombieControl parent;
 
     public override void Enter()
     {

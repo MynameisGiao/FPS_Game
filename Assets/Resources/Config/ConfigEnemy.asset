@@ -14,74 +14,92 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   records:
   - id: 1
-    name: TS_militias_jungle_E
+    name: Soldier_Gun_1
     prefab: E_001
     damage: 12
     hp: 50
-    attack_rate: 20
+    attack_rate: 2.5
   - id: 2
-    name: TS_militias_jungle_D
+    name: Soldier_Gun_2
     prefab: E_002
     damage: 12
     hp: 50
-    attack_rate: 20
+    attack_rate: 2.5
   - id: 3
-    name: TS_militias_underground_B
+    name: Soldier_Gun_3
     prefab: E_003
     damage: 10
     hp: 45
-    attack_rate: 18
+    attack_rate: 2.5
   - id: 4
-    name: TS_militias_underground_C
+    name: Soldier_Gun_4
     prefab: E_004
     damage: 10
     hp: 45
-    attack_rate: 18
+    attack_rate: 2.5
   - id: 5
-    name: TS_militias_urban_A
+    name: Soldier_Gun_5
     prefab: E_005
     damage: 9
     hp: 40
-    attack_rate: 17
+    attack_rate: 2.5
   - id: 6
-    name: TS_militias_urban_B
+    name: Soldier_Gun_6
     prefab: E_006
     damage: 9
     hp: 40
-    attack_rate: 17
+    attack_rate: 2.5
   - id: 7
-    name: TS_militias_urban_D
+    name: Soldier_Gun_7
     prefab: E_007
     damage: 9
     hp: 40
-    attack_rate: 17
+    attack_rate: 2.5
   - id: 8
-    name: TZ_F_Civ_09
+    name: Zombie_1
     prefab: E_008
     damage: 8
     hp: 35
-    attack_rate: 12
+    attack_rate: 2.2
   - id: 9
-    name: TZ_F_Civ_12
+    name: Zombie_2
     prefab: E_009
     damage: 8
     hp: 35
-    attack_rate: 12
+    attack_rate: 2.2
   - id: 10
-    name: TZ_Hulk_04_infected
+    name: Zombie_Special_1
     prefab: E_010
     damage: 8
     hp: 35
-    attack_rate: 15
+    attack_rate: 3
   - id: 11
-    name: TZ_M_Civ_21
+    name: Zombie_3
     prefab: E_011
     damage: 8
     hp: 35
-    attack_rate: 12
+    attack_rate: 2.2
   - id: 12
-    name: TZ_Tank_03
+    name: Zombie_Special_2
     prefab: E_012
     damage: 8
     hp: 35
-    attack_rate: 15
+    attack_rate: 3
+  - id: 13
+    name: Soldier_Melee_1
+    prefab: E_013
+    damage: 8
+    hp: 35
+    attack_rate: 2.2
+  - id: 14
+    name: Soldier_Melee_2
+    prefab: E_014
+    damage: 8
+    hp: 35
+    attack_rate: 2.2
+  - id: 15
+    name: Soldier_Melee_3
+    prefab: E_015
+    damage: 8
+    hp: 35
+    attack_rate: 2.2

@@ -8,25 +8,27 @@ public class EnemyInitData
     public ConfigEnemyRecord cf;
 
 }
-public class EnemyOnDamageData
+public class DamageData
 {
-
+    public int damage;
 }
 
 public class EnemyControl : FSM_System
 {
+   
     public Transform trans;
+    public Transform trans_detect;
+    public float range_detect;
+    public float range_attack;
     public NavMeshAgent agent;
     public ConfigEnemyRecord cf;
     public int hp;
     public int damage;
-
-    //IEnumerator Start()
-    //{
-    //    yield return new WaitForSeconds(2);
-    //    MissionManager.instance.EnemyDead(this);
-    //}
-
+   
+    public float attack_speed;
+    public DamageData damageData = new DamageData();
+    public LayerMask mask_player;
+  
     public virtual void Setup(EnemyInitData enemyInitData)
     {
         trans = transform;
@@ -35,9 +37,10 @@ public class EnemyControl : FSM_System
         agent.Warp(trans.position);
         cf=enemyInitData.cf; 
         hp = cf.HP;
-        damage=cf.Damage;
+        attack_speed = cf.Attack_rate;
+        damageData.damage=cf.Damage;
     }
-    public virtual void OnDamage(EnemyOnDamageData enemyOnDamageData)
+    public virtual void OnDamage(DamageData damageData)
     {
 
     }
@@ -45,4 +48,6 @@ public class EnemyControl : FSM_System
     {
         MissionManager.instance.EnemyDead(this);
     }
+
+
 }

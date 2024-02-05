@@ -93,7 +93,11 @@ public class MissionManager : BYSingletonMono<MissionManager>
         }
     }
    
-    
+    public void OnDamage(DamageData damage)
+    {
+        
+
+    }
 
 
 }

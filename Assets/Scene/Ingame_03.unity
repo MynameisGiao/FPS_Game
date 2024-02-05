@@ -57714,7 +57714,8 @@ GameObject:
   - component: {fileID: 9197064956307607173}
   - component: {fileID: 5419117695993860472}
   - component: {fileID: 4778150167834566270}
-  m_Layer: 0
+  - component: {fileID: 9197064956307607174}
+  m_Layer: 9
   m_Name: CharacterControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57732,7 +57733,7 @@ GameObject:
   - component: {fileID: 5934319450647420012}
   - component: {fileID: 1324769725410665265}
   - component: {fileID: 4711616290802441382}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MainCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -57911,7 +57912,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 375
+    m_Bits: 887
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -58067,7 +58068,7 @@ Transform:
   m_GameObject: {fileID: 8825537590251940700}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.6, z: 0}
+  m_LocalPosition: {x: 0, y: 1.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -58889,7 +58890,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8101345071951902395}
   - component: {fileID: 2686819004123781491}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cam_WP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60144,7 +60145,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2008996512474621844}
   - component: {fileID: 3455013527905951873}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RootCam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60252,6 +60253,27 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.8, z: 0}
+--- !u!135 &9197064956307607174
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72700348446477140}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

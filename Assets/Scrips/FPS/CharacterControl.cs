@@ -50,4 +50,12 @@ public class CharacterControl : MonoBehaviour
         characterController_.Move(move_dir * Time.deltaTime *3.0f* speed);
        
     }
+
+
+    public virtual void OnDamage(DamageData damageData)
+    {
+        Debug.LogError("Damage");
+       // Destroy(gameObject);
+    }
+
 }
