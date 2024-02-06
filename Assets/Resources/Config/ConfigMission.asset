@@ -17,7 +17,7 @@ MonoBehaviour:
     stage: 1
     name: Survival
     sceneName: Ingame_01
-    waves: 1;2;3;5;8
+    waves: 12
     reward: 200
   - id: 2
     stage: 2

@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -39,6 +39,7 @@ public class EnemyControl : FSM_System
         hp = cf.HP;
         attack_speed = cf.Attack_rate;
         damageData.damage=cf.Damage;
+        damage=cf.Damage; // lấy damage ra dùng cho SoldierGun
     }
     public virtual void OnDamage(DamageData damageData)
     {

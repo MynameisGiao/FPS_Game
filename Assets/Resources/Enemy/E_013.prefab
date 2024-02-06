@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: -2786767261056613821}
   - component: {fileID: -7786819595301077662}
   - component: {fileID: 8143092671436944997}
+  - component: {fileID: 7089280420007607337}
   m_Layer: 8
   m_Name: E_013
   m_TagString: Untagged
@@ -49,9 +50,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trans: {fileID: 0}
-  trans_detect: {fileID: 0}
-  range_detect: 10
-  range_attack: 1.2
+  trans_detect: {fileID: 6878691087382184246}
+  range_detect: 12
+  range_attack: 1.4
   agent: {fileID: 0}
   cf:
     id: 0
@@ -65,8 +66,14 @@ MonoBehaviour:
   attack_speed: 0
   mask_player:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   dataBinding: {fileID: -7786819595301077662}
+  attackState:
+    speed: 2
+  moveState:
+    speed: 1
+  player_target: {fileID: 0}
+  timeAttack: 0
 --- !u!114 &-7786819595301077662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,7 +96,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 2356066515486001822}
   m_Enabled: 1
   m_AgentTypeID: -334000983
-  m_Radius: 0.3
+  m_Radius: 0.25
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -98,10 +105,33 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 1.7
+  m_Height: 1.3
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &7089280420007607337
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2356066515486001822}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.2
+  m_Height: 1.2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.6, z: 0}
 --- !u!1 &5252402395675667454
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,7 +141,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6878691087382184246}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Detect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,7 +174,7 @@ GameObject:
   - component: {fileID: 6057123576036943280}
   - component: {fileID: 6057123576038237584}
   - component: {fileID: 6057123576039237456}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: weapon_knife
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -767,7 +797,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.65, y: 0.65, z: 0.65}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6817589282142635995}
@@ -816,7 +846,7 @@ Animator:
   m_GameObject: {fileID: 6817589282142270507}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 60e3152f06c30ab4b97fa503f8639b68, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1780dfa952d20174abd7ba4cb018e8d7, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

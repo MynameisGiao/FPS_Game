@@ -61,7 +61,7 @@ public class WeaponBehavior : MonoBehaviour
     public AudioClip sfx_reload_open;
     public AudioClip sfx_reload_insert;
     public AudioClip sfx_reload_close;
-    //public AudioClip sfx_ShotGun_pump;
+ 
 
     public float min_accuracy;
     public float max_accuracy;

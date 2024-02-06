@@ -18,88 +18,88 @@ MonoBehaviour:
     prefab: E_001
     damage: 12
     hp: 50
-    attack_rate: 2.5
+    attack_rate: 1.5
   - id: 2
     name: Soldier_Gun_2
     prefab: E_002
     damage: 12
     hp: 50
-    attack_rate: 2.5
+    attack_rate: 2
   - id: 3
     name: Soldier_Gun_3
     prefab: E_003
     damage: 10
     hp: 45
-    attack_rate: 2.5
+    attack_rate: 1.2
   - id: 4
     name: Soldier_Gun_4
     prefab: E_004
     damage: 10
     hp: 45
-    attack_rate: 2.5
+    attack_rate: 1.2
   - id: 5
     name: Soldier_Gun_5
     prefab: E_005
     damage: 9
     hp: 40
-    attack_rate: 2.5
+    attack_rate: 1.5
   - id: 6
     name: Soldier_Gun_6
     prefab: E_006
     damage: 9
     hp: 40
-    attack_rate: 2.5
+    attack_rate: 1.2
   - id: 7
     name: Soldier_Gun_7
     prefab: E_007
     damage: 9
     hp: 40
-    attack_rate: 2.5
+    attack_rate: 2
   - id: 8
     name: Zombie_1
     prefab: E_008
     damage: 8
     hp: 35
-    attack_rate: 2.2
+    attack_rate: 2
   - id: 9
     name: Zombie_2
     prefab: E_009
     damage: 8
     hp: 35
-    attack_rate: 2.2
+    attack_rate: 2
   - id: 10
     name: Zombie_Special_1
     prefab: E_010
     damage: 8
     hp: 35
-    attack_rate: 3
+    attack_rate: 2.5
   - id: 11
     name: Zombie_3
     prefab: E_011
     damage: 8
     hp: 35
-    attack_rate: 2.2
+    attack_rate: 2
   - id: 12
     name: Zombie_Special_2
     prefab: E_012
     damage: 8
     hp: 35
-    attack_rate: 3
+    attack_rate: 2.5
   - id: 13
     name: Soldier_Melee_1
     prefab: E_013
     damage: 8
     hp: 35
-    attack_rate: 2.2
+    attack_rate: 1.8
   - id: 14
     name: Soldier_Melee_2
     prefab: E_014
     damage: 8
     hp: 35
-    attack_rate: 2.2
+    attack_rate: 1.8
   - id: 15
     name: Soldier_Melee_3
     prefab: E_015
     damage: 8
     hp: 35
-    attack_rate: 2.2
+    attack_rate: 1.8

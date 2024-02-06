@@ -48,10 +48,9 @@ public class ZB_AttackState : FSM_State
             {
                 if (parent.agent.remainingDistance <= parent.range_attack + 0.1f)
                 {
-
+                    parent.dataBinding.Speed = 0;
                     if (parent.timeAttack >= parent.cf.Attack_rate)
                     {
-                        parent.agent.isStopped = true;
                         parent.dataBinding.Attack = true;
 
                         parent.timeAttack = 0;
@@ -92,7 +91,6 @@ public class ZB_AttackState : FSM_State
     public override void OnAnimExit()
     {
         base.OnAnimExit();
-        parent.agent.isStopped=false;
         isAttacking=false;
     }
     private void UpdateRotation()

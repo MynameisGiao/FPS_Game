@@ -82,8 +82,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trans: {fileID: 0}
   trans_detect: {fileID: 5865708871825582297}
-  range_detect: 5
-  range_attack: 1.2
+  range_detect: 7
+  range_attack: 1.4
   agent: {fileID: 0}
   cf:
     id: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
     m_Bits: 512
   dataBinding: {fileID: -7137071659606621994}
   attackState:
-    speed: 1
+    speed: 2
   moveState:
     speed: 1
   player_target: {fileID: 0}
