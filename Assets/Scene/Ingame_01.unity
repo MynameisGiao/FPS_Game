@@ -442,7 +442,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -11, y: -60.9}
+  m_AnchoredPosition: {x: -11, y: -45}
   m_SizeDelta: {x: 160, y: 40.5647}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &131615031
@@ -1270,8 +1270,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: -446.82294}
-  m_SizeDelta: {x: 411.8499, y: 163.4041}
+  m_AnchoredPosition: {x: 1, y: -408}
+  m_SizeDelta: {x: 411.8499, y: 131.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &679224060
 MonoBehaviour:
@@ -1648,7 +1648,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0002441407, y: 0}
+  m_AnchoredPosition: {x: 0.00024414062, y: -34}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1024508878
@@ -61507,8 +61507,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3, y: 15}
-  m_SizeDelta: {x: 370, y: 370}
+  m_AnchoredPosition: {x: -3, y: 13.0324}
+  m_SizeDelta: {x: 370, y: 366.0649}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &3148313479710529097
 RectTransform:
@@ -62090,9 +62090,6 @@ MonoBehaviour:
     sceneName: 
     waves: 
     reward: 0
-  OnBaseHpChange:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!23 &7356999211203394011
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -62745,8 +62742,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.75
+  m_Center: {x: 0, y: 0.75, z: 0}
 --- !u!4 &9117380214516709957
 Transform:
   m_ObjectHideFlags: 0

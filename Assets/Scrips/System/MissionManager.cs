@@ -16,12 +16,12 @@ public class MissionManager : BYSingletonMono<MissionManager>
     private int total_enemy;
     private int count_enemy_create;
     public event Action<int, int> OnWaveChange;
-    //public UnityEvent<int, int> OnWaveChange;
-    // private int hp = 20;
-    // private int max_hp = 20;
-    public UnityEvent<int, int> OnBaseHpChange;
-    //private bool isEndMission = false;
-
+   
+     private int cur_hp= 100;
+     private int max_hp = 100;
+    public Action<int, int,int> OnHpChange;
+    private bool isEndMission = false;
+    
     IEnumerator Start()
     {
         cf_mission = GameManager.instance.cur_cf_mission;
@@ -43,7 +43,7 @@ public class MissionManager : BYSingletonMono<MissionManager>
 
 
             //OnWaveChange.RemoveAllListeners();
-            //OnBaseHpChange.RemoveAllListeners();
+            //OnHpChange.RemoveAllListeners();
             //Debug.LogError(" mission complete ");
             //BYPoolManager.instance.GetPool("HPHub").DeSpawnAll();
             
@@ -93,9 +93,24 @@ public class MissionManager : BYSingletonMono<MissionManager>
         }
     }
    
-    public void OnDamage(DamageData damage)
+    public void OnDamage(int  damage)
     {
-        
+        cur_hp -= damage;
+        if(cur_hp <= 0)
+        {
+            // fall
+            cur_hp = 0;
+            if (!isEndMission)
+            {
+                DialogManager.instance.ShowDialog(DialogIndex.FailDialog);
+                isEndMission = true;
+            }
+           
+        }
+        else
+        {
+            OnHpChange?.Invoke(damage, max_hp, cur_hp);
+        }
 
     }
 

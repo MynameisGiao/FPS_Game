@@ -34,14 +34,7 @@ public class WinDialog : BaseDialog
     public void OnClaim()
     {
 
-        if (cf != null)
-        {
-            DataController.instance.OnGetReward(cf);
-        }
-        else
-        {
-            Debug.LogError("ConfigMissionRecord config_gun là null");
-        }
+        DataController.instance.OnGetReward(cf);
         DialogManager.instance.HideDialog(dialogIndex);
         ViewManager.instance.SwitchView(ViewIndex.EmptyView);
         LoadSceneManager.instance.LoadSceneByIndex(1, () =>

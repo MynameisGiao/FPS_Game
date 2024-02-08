@@ -22,6 +22,13 @@ public class SoldierGunDataBinding : MonoBehaviour
             }
         }
     }
+    public bool Reload
+    {
+        set
+        {
+            animator.Play("Reload", 0, 0);
+        }
+    }
     public bool Dead
     {
         set

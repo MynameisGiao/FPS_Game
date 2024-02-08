@@ -54,7 +54,7 @@ public class CharacterControl : MonoBehaviour
 
     public virtual void OnDamage(DamageData damageData)
     {
-        Debug.LogError("Damage");
+        Debug.LogError("Damage: "+ damageData);
        // Destroy(gameObject);
     }
 

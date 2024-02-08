@@ -65,5 +65,5 @@ public class SoldierMeleeControl : EnemyControl
         base.Update();
         timeAttack += Time.deltaTime;
     }
-  
+ 
 }

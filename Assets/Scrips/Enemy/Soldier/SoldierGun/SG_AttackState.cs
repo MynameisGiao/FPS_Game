@@ -43,7 +43,7 @@ public class SG_AttackState : FSM_State
             }
 
             parent.agent.SetDestination(player_target.position);
-            UpdateRotation();
+            UpdateRotationTarget();
             float speed_anim = 2; //parent.agent.velocity.magnitude / parent.agent.speed;
             cur_speed_anim = Mathf.Lerp(cur_speed_anim, speed_anim * speed, Time.deltaTime * 5);
             parent.dataBinding.Speed = cur_speed_anim;
@@ -52,7 +52,7 @@ public class SG_AttackState : FSM_State
                 if (parent.agent.remainingDistance <= parent.range_attack + 0.1f)
                 {
                     parent.dataBinding.Speed = 0;
-                    UpdateRotation();
+                    UpdateRotationTarget();
                     if (parent.timeAttack >= parent.cf.Attack_rate)
                     {                   
                         parent.timeAttack = 0;
@@ -64,7 +64,7 @@ public class SG_AttackState : FSM_State
                             soldierGunData.damage = parent.damage;
                             soldierGunData.rof = parent.attack_speed;
                             weaponBehaviour.SetupGun(soldierGunData);
-
+                           
                           
                         }
                         weaponBehaviour.enabled = true;
@@ -72,6 +72,7 @@ public class SG_AttackState : FSM_State
                         weaponBehaviour.player_target = player_target;
 
                         parent.dataBinding.Attack = true;
+                       
                     }
 
                 }
@@ -99,7 +100,8 @@ public class SG_AttackState : FSM_State
         base.OnAnimMiddle();
         if (Vector3.Distance(parent.trans.position, player_target.position) <= parent.range_attack + 0.1f)
         {
-            player_target.GetComponent<CharacterControl>().OnDamage(parent.damageData);
+            Debug.LogError("Attack " + parent.damage);
+            MissionManager.instance.OnDamage(parent.damage);
         }
 
     }
@@ -110,18 +112,17 @@ public class SG_AttackState : FSM_State
      
         isAttacking = false;
     }
-    private void UpdateRotation()
+    private void UpdateRotationTarget()
     {
-        Vector3 dir = parent.agent.steeringTarget - parent.trans.position;
-        dir.Normalize();
-        if (dir != Vector3.zero)
-        {
-            Quaternion q = Quaternion.LookRotation(dir, Vector3.up);
-            parent.transform.rotation = Quaternion.Slerp(parent.trans.rotation, q, Time.deltaTime * 30);
-        }
-    }
+        Vector3 pos_tar = player_target.position;
+        pos_tar.y= parent.trans.position.y;
+        Vector3 dir= pos_tar -parent.trans.position;
 
-  
+        dir.Normalize();
+        Quaternion q = Quaternion.LookRotation(dir, Vector3.up);
+        parent.trans.rotation = q;
+    }
+    
 }
         
         

@@ -6,7 +6,7 @@ using UnityEngine;
 [Serializable]
 public class ConfigEnemyRecord
 {
-    // id	name	prefab	damage	hp	attack_rate weapon
+    // id	name	prefab	damage	cur_hp	attack_rate weapon
     [SerializeField]
     private int id;
     public int ID

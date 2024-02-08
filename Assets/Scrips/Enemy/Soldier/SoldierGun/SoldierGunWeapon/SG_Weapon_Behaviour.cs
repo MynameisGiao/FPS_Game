@@ -19,6 +19,7 @@ public abstract class SG_Weapon_Behaviour : MonoBehaviour
     public bool isFire;
     public bool isReloading;
     public Transform player_target;
+    public SG_MuzzleFlash muzzleFlash;
     public abstract void SetupGun(SoldierGunData soldierGunData);
     
     void Start()
@@ -26,6 +27,10 @@ public abstract class SG_Weapon_Behaviour : MonoBehaviour
         number_bullet = clip_size;
     }
 
+    public void Ready()
+    {
+        
+    }
     void Update()
     {
         time_fire += Time.deltaTime;
@@ -35,10 +40,11 @@ public abstract class SG_Weapon_Behaviour : MonoBehaviour
             {
                 time_fire = 0;
                 number_bullet--;
+                muzzleFlash.Fire();
                 i_SGHandle.FireHandle();
             }
         }
-        if (number_bullet <= 0)
+        if (number_bullet <= 0 && !isReloading)
         {
             i_SGHandle.ReloadHandle();
         }

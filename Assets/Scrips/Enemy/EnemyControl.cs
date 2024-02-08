@@ -48,6 +48,7 @@ public class EnemyControl : FSM_System
     public void OnDead()
     {
         MissionManager.instance.EnemyDead(this);
+        Destroy(gameObject);
     }
 
 

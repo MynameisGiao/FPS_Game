@@ -21,10 +21,12 @@ public class SG_Snipper : SG_Weapon_Behaviour
 
     IEnumerator ReloadProgress()
     {
+        isFire = false;
         isReloading = true;
         yield return new WaitForSeconds(time_reload);
         isReloading = false;
         number_bullet = clip_size;
+        isFire = true;
     }
 }
 

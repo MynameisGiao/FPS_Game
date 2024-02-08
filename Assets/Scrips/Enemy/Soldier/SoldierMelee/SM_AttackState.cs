@@ -9,7 +9,7 @@ public class SM_AttackState : FSM_State
 {
     [NonSerialized]
     public SoldierMeleeControl parent;
-    private Transform target;
+    private Transform player_target;
     public float speed;
     private float cur_speed_anim;
     private float delayCheck = 0;
@@ -18,7 +18,7 @@ public class SM_AttackState : FSM_State
     public override void Enter(object data)
     {
         base.Enter(data);
-        target = (Transform)data;
+        player_target = (Transform)data;
         parent.agent.isStopped = false;
         parent.agent.speed = speed;
         cur_speed_anim = 0;
@@ -33,14 +33,14 @@ public class SM_AttackState : FSM_State
 
         if (!isAttacking)
         {
-            if (Vector3.Distance(parent.trans.position, target.position) > parent.range_detect * 1.5f)
+            if (Vector3.Distance(parent.trans.position, player_target.position) > parent.range_detect * 1.5f)
             {
                 parent.GotoState(parent.moveState);
                 return;
             }
 
-            parent.agent.SetDestination(target.position);
-            UpdateRotation();
+            parent.agent.SetDestination(player_target.position);
+            UpdateRotationTarget();
             float speed_anim = 2; //parent.agent.velocity.magnitude / parent.agent.speed;
             cur_speed_anim = Mathf.Lerp(cur_speed_anim, speed_anim * speed, Time.deltaTime * 5);
             parent.dataBinding.Speed = cur_speed_anim;
@@ -79,9 +79,10 @@ public class SM_AttackState : FSM_State
     public override void OnAnimMiddle()
     {
         base.OnAnimMiddle();
-        if (Vector3.Distance(parent.trans.position, target.position) <= parent.range_attack + 0.1f)
+        if (Vector3.Distance(parent.trans.position, player_target.position) <= parent.range_attack + 0.1f)
         {
-            target.GetComponent<CharacterControl>().OnDamage(parent.damageData);
+            Debug.LogError("Attack " + parent.damage);
+            MissionManager.instance.OnDamage(parent.damage);
         }
 
     }
@@ -91,14 +92,14 @@ public class SM_AttackState : FSM_State
         base.OnAnimExit();
         isAttacking = false;
     }
-    private void UpdateRotation()
+    private void UpdateRotationTarget()
     {
-        Vector3 dir = parent.agent.steeringTarget - parent.trans.position;
+        Vector3 pos_tar = player_target.position;
+        pos_tar.y = parent.trans.position.y;
+        Vector3 dir = pos_tar - parent.trans.position;
+
         dir.Normalize();
-        if (dir != Vector3.zero)
-        {
-            Quaternion q = Quaternion.LookRotation(dir, Vector3.up);
-            parent.transform.rotation = Quaternion.Slerp(parent.trans.rotation, q, Time.deltaTime * 30);
-        }
+        Quaternion q = Quaternion.LookRotation(dir, Vector3.up);
+        parent.trans.rotation = q;
     }
 }
