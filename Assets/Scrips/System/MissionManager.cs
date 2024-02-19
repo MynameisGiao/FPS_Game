@@ -15,11 +15,11 @@ public class MissionManager : BYSingletonMono<MissionManager>
     private int number_enemy_dead;
     private int total_enemy;
     private int count_enemy_create;
-    public event Action<int, int> OnWaveChange;
+    public UnityEvent<int, int> OnWaveChange;
    
-     private int cur_hp= 100;
-     private int max_hp = 100;
-    public Action<int, int,int> OnHpChange;
+     private int cur_hp= 200;
+     private int max_hp = 200;
+    public UnityEvent<int, int,int> OnHpChange;
     private bool isEndMission = false;
     
     IEnumerator Start()
@@ -35,20 +35,12 @@ public class MissionManager : BYSingletonMono<MissionManager>
         index_wave++;
         if (index_wave >= waves.Count)
         {
-            // mission complete
+            OnWaveChange.RemoveAllListeners();
+            OnHpChange.RemoveAllListeners();
             Debug.LogError("Mission Complete");
             WinDialogParam param = new WinDialogParam();
             param.cf_mission = cf_mission;
             DialogManager.instance.ShowDialog(DialogIndex.WinDialog,param);
-
-
-            //OnWaveChange.RemoveAllListeners();
-            //OnHpChange.RemoveAllListeners();
-            //Debug.LogError(" mission complete ");
-            //BYPoolManager.instance.GetPool("HPHub").DeSpawnAll();
-            
-            
-            //DialogManager.instance.ShowDialog(DialogIndex.WinDialog, param);
         }
         else
         {
@@ -102,6 +94,8 @@ public class MissionManager : BYSingletonMono<MissionManager>
             cur_hp = 0;
             if (!isEndMission)
             {
+                OnWaveChange.RemoveAllListeners();
+                OnHpChange.RemoveAllListeners();
                 DialogManager.instance.ShowDialog(DialogIndex.FailDialog);
                 isEndMission = true;
             }
@@ -114,5 +108,20 @@ public class MissionManager : BYSingletonMono<MissionManager>
 
     }
 
+    public void PlusHP()
+    {
+        if(cur_hp <= max_hp-20)
+        {
+            cur_hp += 20;
+            OnHpChange?.Invoke(0, max_hp, cur_hp);
+        }
+        else if( cur_hp<max_hp && cur_hp >max_hp-20)
+        {
+            int plus=max_hp-cur_hp;
+            cur_hp += plus;
+            OnHpChange?.Invoke(0, max_hp, cur_hp);
+        }
+        
+    }
 
 }

@@ -29,6 +29,7 @@ public class ZombieDataBinding : MonoBehaviour
             animator.Play("Dead", 0, 0);
         }
     }
+  
     public bool StartState
     {
         set

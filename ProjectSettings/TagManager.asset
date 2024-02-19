@@ -8,6 +8,8 @@ TagManager:
   - SoftBody
   - Metal
   - Dirt
+  - FX
+  - Enemy
   layers:
   - Default
   - TransparentFX

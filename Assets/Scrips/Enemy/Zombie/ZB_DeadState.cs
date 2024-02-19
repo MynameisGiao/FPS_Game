@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -8,14 +8,19 @@ public class ZB_DeadState : FSM_State
 {
     [NonSerialized]
     public ZombieControl parent;
+
+    
     public override void Enter()
     {
         base.Enter();
         parent.dataBinding.Dead = true;
+
     }
-    public override void Exit()
+    public override void OnAnimMiddle()
     {
-        base.Exit();
+        base.OnAnimMiddle();
+        Debug.LogError("Exit");
         parent.OnDead();
+      
     }
 }

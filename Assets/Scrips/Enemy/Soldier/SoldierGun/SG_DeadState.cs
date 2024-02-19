@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -13,9 +13,13 @@ public class SG_DeadState : FSM_State
     {
         base.Enter();
         parent.dataBinding.Dead = true;
+
     }
-    public override void Exit() 
-    { base.Exit();
+    public override void OnAnimMiddle()
+    {
+        base.OnAnimMiddle();
+        Debug.LogError("Exit");
         parent.OnDead();
+
     }
 }

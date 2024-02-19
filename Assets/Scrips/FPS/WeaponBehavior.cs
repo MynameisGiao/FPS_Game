@@ -13,6 +13,7 @@ public class WeaponData
 
 public class WeaponBehavior : MonoBehaviour
 {
+    private EnemyControl enemyControl;
     public Animator animator;
     private Action callback_hideGun;
     public WeaponRender weaponRender;
@@ -27,7 +28,7 @@ public class WeaponBehavior : MonoBehaviour
         set
         {
             is_Zoom = value;
-            cameraControl.fov = is_Zoom? fov_zoom : fov_normal;
+            cameraControl.fov = is_Zoom ? fov_zoom : fov_normal;
             crossHair.OnZoom(is_Zoom);
             if (isSniper)
             {
@@ -56,12 +57,12 @@ public class WeaponBehavior : MonoBehaviour
     public AudioClip sfx_reload_left;
     public AudioClip sfx_reload_outof;
     public AudioClip sfx_ready;
-    
+
     // cho ShotGun
     public AudioClip sfx_reload_open;
     public AudioClip sfx_reload_insert;
     public AudioClip sfx_reload_close;
- 
+
 
     public float min_accuracy;
     public float max_accuracy;
@@ -83,8 +84,8 @@ public class WeaponBehavior : MonoBehaviour
     public float fov_zoom;
     public GameObject model;
 
-    public int bps =1;
-    
+    public int bps = 1;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -98,7 +99,7 @@ public class WeaponBehavior : MonoBehaviour
         clip_Size = weaponData.cf.ClipSize;
         total = weaponData.cf.Total;
         rof = weaponData.cf.ROF;
-        recoil=weaponData.cf.Recoil;
+        recoil = weaponData.cf.Recoil;
         fov_normal = weaponData.cf.Fov_normal;
         fov_zoom = weaponData.cf.Fov_zoom;
         number_bullet = clip_Size;
@@ -139,11 +140,11 @@ public class WeaponBehavior : MonoBehaviour
 
                 cur_accuracy += drop_accuracy;
                 cur_accuracy = Mathf.Clamp(cur_accuracy, min_accuracy, max_accuracy);
-                for(int i=0; i<bps;i++)
+                for (int i = 0; i < bps; i++)
                 {
                     CreateBullet();
                 }
-                
+
                 cameraControl.AddRecoilGun(recoil);
 
                 if (isZoom)
@@ -175,8 +176,7 @@ public class WeaponBehavior : MonoBehaviour
         RaycastHit hitInfo;
         if (Physics.Raycast(RayOrigin, out hitInfo, 100f, mask))
         {
-            //Debug.DrawRay(RayOrigin.direction, hitInfo.point, Color.yellow);
-            // 
+            
             Transform impact = null;
             if (hitInfo.collider.CompareTag("SoftBody"))
             {
@@ -193,6 +193,19 @@ public class WeaponBehavior : MonoBehaviour
             else if (hitInfo.collider.CompareTag("Dirt"))
             {
                 impact = BYPoolManager.instance.GetPool("Impact Dirt").Spawn();
+            }
+            else if (hitInfo.collider.CompareTag("Enemy"))
+            {
+                EnemyControl enemy = hitInfo.collider.GetComponent<EnemyControl>();
+                if (enemy != null)
+                {
+                    enemyControl = enemy;
+                    impact = BYPoolManager.instance.GetPool("Impact Blood").Spawn();
+                    enemyControl.OnDamage(this.weaponData);
+                   
+                   
+                }
+               
             }
 
             if (impact != null)
@@ -236,7 +249,7 @@ public class WeaponBehavior : MonoBehaviour
                 StopCoroutine("ReloadProgress");
                 StartCoroutine("ReloadProgress");
             }
-           
+
         }
 
     }
@@ -250,7 +263,7 @@ public class WeaponBehavior : MonoBehaviour
         audioSource_.PlayOneShot(sfx_reload_open);
         animator.Play("Reload_Open", 0, 0);
         yield return new WaitForSeconds(0.93f);
-        while(number_bullet<clip_Size && total > 0)
+        while (number_bullet < clip_Size && total > 0)
         {
             audioSource_.PlayOneShot(sfx_reload_insert);
             animator.Play("Reload_Insert", 0, 0);
@@ -323,4 +336,5 @@ public class WeaponBehavior : MonoBehaviour
         OnAmmoChange?.Invoke(number_bullet, total);
     }
 
+   
 }

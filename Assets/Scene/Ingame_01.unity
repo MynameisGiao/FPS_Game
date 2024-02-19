@@ -61819,6 +61819,9 @@ MonoBehaviour:
   - total: 30
     name_pool: Impact SoftBody
     prefab: {fileID: 1842858769456001176, guid: 069e834d870da0d4d938435222f39619, type: 3}
+  - total: 30
+    name_pool: Impact Blood
+    prefab: {fileID: 4000011382548710, guid: 27ff29b1a31b8eb4099c89332aa36f32, type: 3}
 --- !u!1 &5763525522230783079
 GameObject:
   m_ObjectHideFlags: 0
@@ -62090,6 +62093,12 @@ MonoBehaviour:
     sceneName: 
     waves: 
     reward: 0
+  OnWaveChange:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHpChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!23 &7356999211203394011
 MeshRenderer:
   m_ObjectHideFlags: 0

@@ -9,9 +9,7 @@ public class ConfigManager : BYSingletonMono<ConfigManager>
     public ConfigMission configMission;
     public ConfigGun configGun;
     public ConfigWave configWave;
-    //public ConfigShop configShop;
-    //public ConfigUnit configUnit;
-    //public ConfigUnitLevel configUnitLevel;
+    
     private void Awake()
     {
         StartCoroutine(ProgressLoadConfig(null));
@@ -34,14 +32,7 @@ public class ConfigManager : BYSingletonMono<ConfigManager>
         configWave = Resources.Load("Config/ConfigWave", typeof(ScriptableObject)) as ConfigWave;
         yield return new WaitUntil(() => configWave != null);
 
-        //configShop = Resources.Load("Config/ConfigShop", typeof(ScriptableObject)) as ConfigShop;
-        //yield return new WaitUntil(() => configShop != null);
-
-        //configUnit = Resources.Load("Config/ConfigUnit", typeof(ScriptableObject)) as ConfigUnit;
-        //yield return new WaitUntil(() => configUnit != null);
-
-        //configUnitLevel = Resources.Load("Config/ConfigUnitLevel", typeof(ScriptableObject)) as ConfigUnitLevel;
-        //yield return new WaitUntil(() => configUnitLevel != null);
+      
 
         if (callback != null)
             callback();

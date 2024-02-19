@@ -35,19 +35,19 @@ public class IngameView : BaseView
     public override void OnShowView()
     {
         hp_fg.fillAmount = 1;
-        MissionManager.instance.OnWaveChange += OnWaveChange;
-        MissionManager.instance.OnHpChange += OnHpChange;
+        MissionManager.instance.OnWaveChange.AddListener(OnWaveChange);
+        MissionManager.instance.OnHpChange.AddListener(OnHpChange);
     }
 
     private void OnHpChange(int damage, int max_hp, int cur_hp)
     {
-        cur_hp -= damage; // Giảm sức khỏe hiện tại theo lượng damage nhận vào
+        cur_hp -= damage; 
 
         if (cur_hp < 0)
         {
-            cur_hp = 0; // Đảm bảo sức khỏe không âm
+            cur_hp = 0; 
         }
-
+        
         float val = (float)cur_hp / (float)max_hp;
         hp_fg.fillAmount = val;
     }
@@ -59,8 +59,7 @@ public class IngameView : BaseView
 
     public override void OnHideView()
     {
-        MissionManager.instance.OnHpChange += OnHpChange;
-        MissionManager.instance.OnWaveChange -= OnWaveChange;
+        
     }
     
 }

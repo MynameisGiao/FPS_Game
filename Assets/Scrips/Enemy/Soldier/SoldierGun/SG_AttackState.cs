@@ -61,6 +61,7 @@ public class SG_AttackState : FSM_State
                         if (!is_InitGun)
                         {
                             is_InitGun = true;
+                            soldierGunData.sg_Control = parent;
                             soldierGunData.damage = parent.damage;
                             soldierGunData.rof = parent.attack_speed;
                             weaponBehaviour.SetupGun(soldierGunData);
@@ -70,8 +71,7 @@ public class SG_AttackState : FSM_State
                         weaponBehaviour.enabled = true;
                         weaponBehaviour.isFire = true;
                         weaponBehaviour.player_target = player_target;
-
-                        parent.dataBinding.Attack = true;
+                     
                        
                     }
 
@@ -100,7 +100,6 @@ public class SG_AttackState : FSM_State
         base.OnAnimMiddle();
         if (Vector3.Distance(parent.trans.position, player_target.position) <= parent.range_attack + 0.1f)
         {
-            Debug.LogError("Attack " + parent.damage);
             MissionManager.instance.OnDamage(parent.damage);
         }
 

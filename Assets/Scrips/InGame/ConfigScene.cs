@@ -11,14 +11,7 @@ public class ConfigScene : BYSingletonMono<ConfigScene>
     [SerializeField]
      private List<Transform> patrolling_points;
    
-    //public Transform GetEnemySpawnPoint()
-    //{
-    //    int index = UnityEngine.Random.Range(0, enemy_spawns.Count);
-    //    return enemy_spawns[index];
-
-    //    //return enemy_spawns.OrderBy(x => Guid.NewGuid()).FirstOrDefault();
-    //}
-
+   
     private List<Transform> usedSpawnPoints = new List<Transform>();
 
     public Transform GetEnemySpawnPoint()

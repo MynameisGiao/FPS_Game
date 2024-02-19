@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8700660623808374912}
   m_Layer: 8
   m_Name: E_003
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,7 +52,7 @@ MonoBehaviour:
   trans: {fileID: 0}
   trans_detect: {fileID: 4044681580066736088}
   range_detect: 12
-  range_attack: 4
+  range_attack: 5
   agent: {fileID: 0}
   cf:
     id: 0
@@ -62,6 +62,7 @@ MonoBehaviour:
     hp: 0
     attack_rate: 0
   hp: 0
+  cur_hp: 0
   damage: 0
   attack_speed: 0
   mask_player:
@@ -72,8 +73,8 @@ MonoBehaviour:
     speed: 2
     weaponBehaviour: {fileID: 4665229354620658430}
   moveState:
+    player_target: {fileID: 0}
     speed: 1
-  player_target: {fileID: 0}
   timeAttack: 0
 --- !u!114 &6198446419653069626
 MonoBehaviour:
@@ -476,11 +477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 068b3fc532fb57f4198b93431aa5a142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time_reload: 2.5
-  clip_size: 25
-  number_bullet: 0
   isFire: 0
-  isReloading: 0
   player_target: {fileID: 0}
   muzzleFlash: {fileID: 5826176842955429512}
 --- !u!1 &4455705268930756544

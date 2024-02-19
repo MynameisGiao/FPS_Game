@@ -9,19 +9,24 @@ public class SM_MoveState : FSM_State
     [NonSerialized]
     public SoldierMeleeControl parent;
     private Transform target;
+    public Transform player_target;
 
     public float speed;
     private float cur_speed_anim;
     private float delayCheck = 0;
+    private Coroutine coroutine_dt_player;
     public override void Enter()
     {
-        Debug.LogError("Enter move state!");
         base.Enter();
         SetTarget();
         parent.agent.isStopped = false;
         parent.agent.speed = speed;
         cur_speed_anim = 0;
         delayCheck = 0;
+        if (coroutine_dt_player != null)
+            parent.StopCoroutine(coroutine_dt_player);
+        coroutine_dt_player = parent.StartCoroutine(LoopDetectPlayer());
+
 
     }
     public override void Update()
@@ -56,6 +61,39 @@ public class SM_MoveState : FSM_State
         {
             Quaternion q = Quaternion.LookRotation(dir, Vector3.up);
             parent.transform.rotation = Quaternion.Slerp(parent.trans.rotation, q, Time.deltaTime * 30);
+        }
+    }
+
+    IEnumerator LoopDetectPlayer()
+    {
+        WaitForSeconds wait = new WaitForSeconds(1);
+        while (true)
+        {
+            yield return wait;
+            if (parent.cur_State != parent.attackState && parent.cur_State != parent.deadState)
+            {
+                Collider[] cols = Physics.OverlapSphere(parent.trans_detect.position, parent.range_detect, parent.mask_player);
+                int index = -1;
+                if (cols.Length == 1)
+                {
+                    index = 0;
+                }
+
+                float distance = 50;
+                for (int i = 0; i < cols.Length; i++)
+                {
+                    float dis = Vector3.Distance(parent.trans_detect.position, cols[i].transform.position);
+                    if (dis < distance)
+                    {
+                        distance = dis;
+                        index = i;
+                    }
+                }
+
+                if (index != -1)
+                    parent.GotoState(parent.attackState, cols[index].transform);
+            }
+
         }
     }
 }

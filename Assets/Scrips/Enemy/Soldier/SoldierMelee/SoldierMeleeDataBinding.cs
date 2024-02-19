@@ -29,6 +29,13 @@ public class SoldierMeleeDataBinding : MonoBehaviour
             animator.Play("Dead", 0, 0);
         }
     }
+    public bool TakeDamage
+    {
+        set
+        {
+            animator.Play("Damage", 0, 0);
+        }
+    }
     public bool StartState
     {
         set

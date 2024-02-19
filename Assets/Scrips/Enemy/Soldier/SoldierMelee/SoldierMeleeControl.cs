@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,7 +10,7 @@ public class SoldierMeleeControl : EnemyControl
     public SM_MoveState moveState;
     public SM_DeadState deadState;
 
-    public Transform player_target;
+   
     public float timeAttack;
 
 
@@ -24,46 +24,31 @@ public class SoldierMeleeControl : EnemyControl
         deadState.parent = this;
 
         GotoState(startState);
-        StartCoroutine("LoopDetectPlayer");
 
     }
 
-    IEnumerator LoopDetectPlayer()
-    {
-        WaitForSeconds wait = new WaitForSeconds(1);
-        while (true)
-        {
-            yield return wait;
-            if (cur_State != attackState && cur_State != deadState)
-            {
-                Collider[] cols = Physics.OverlapSphere(trans_detect.position, range_detect, mask_player);
-                int index = -1;
-                if (cols.Length == 1)
-                {
-                    index = 0;
-                }
 
-                float distance = 50;
-                for (int i = 0; i < cols.Length; i++)
-                {
-                    float dis = Vector3.Distance(trans_detect.position, cols[i].transform.position);
-                    if (dis < distance)
-                    {
-                        distance = dis;
-                        index = i;
-                    }
-                }
-
-                if (index != -1)
-                    GotoState(attackState, cols[index].transform);
-            }
-
-        }
-    }
     protected override void Update()
     {
         base.Update();
         timeAttack += Time.deltaTime;
+
+
     }
- 
+
+    public override void OnDamage(WeaponData data)
+    {
+
+        if (cur_State != deadState)
+        {
+            cur_hp -= data.cf.Damage;
+            if (cur_hp <= 0)
+            {
+                GotoState(deadState);
+            }
+        }
+        else if (cur_State == deadState)
+            return;
+
+    }
 }

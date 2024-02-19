@@ -287,11 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03581aa54255b5d42b9d2637103f86bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time_reload: 3
-  clip_size: 10
-  number_bullet: 0
   isFire: 0
-  isReloading: 0
   player_target: {fileID: 0}
   muzzleFlash: {fileID: 8091415814124806924}
 --- !u!1 &276478736160839658
@@ -1525,7 +1521,7 @@ GameObject:
   - component: {fileID: 3622849705854916054}
   m_Layer: 8
   m_Name: E_002
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1562,7 +1558,7 @@ MonoBehaviour:
   trans: {fileID: 0}
   trans_detect: {fileID: 1467065583610911667}
   range_detect: 12
-  range_attack: 5
+  range_attack: 6
   agent: {fileID: 0}
   cf:
     id: 0
@@ -1572,11 +1568,13 @@ MonoBehaviour:
     hp: 0
     attack_rate: 0
   hp: 0
+  cur_hp: 0
   damage: 0
   attack_speed: 0
   mask_player:
     serializedVersion: 2
     m_Bits: 512
+  animator: {fileID: 276478736151372228}
   dataBinding: {fileID: 7298827905198487070}
   attackState:
     speed: 2

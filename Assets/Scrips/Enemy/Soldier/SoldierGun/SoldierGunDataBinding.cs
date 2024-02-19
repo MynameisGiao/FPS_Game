@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,13 +22,7 @@ public class SoldierGunDataBinding : MonoBehaviour
             }
         }
     }
-    public bool Reload
-    {
-        set
-        {
-            animator.Play("Reload", 0, 0);
-        }
-    }
+  
     public bool Dead
     {
         set
@@ -36,6 +30,7 @@ public class SoldierGunDataBinding : MonoBehaviour
             animator.Play("Dead", 0, 0);
         }
     }
+   
     public bool StartState
     {
         set

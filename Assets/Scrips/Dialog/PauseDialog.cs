@@ -5,19 +5,18 @@ using UnityEngine;
 
 public class PauseDialog : BaseDialog
 {
+
+    public override void OnShowDialog()
+    {
+        base.OnShowDialog();
+        Time.timeScale = 0;
+    }
+    public override void OnHideDialog()
+    {
+        base.OnHideDialog();
+        Time.timeScale = 1;
+    }
    
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-
-    }
- 
     public void OnClose()
     {
         DialogManager.instance.HideDialog(DialogIndex.PauseDialog);
