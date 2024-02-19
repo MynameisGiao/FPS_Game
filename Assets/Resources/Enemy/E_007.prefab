@@ -19464,14 +19464,13 @@ MonoBehaviour:
   mask_player:
     serializedVersion: 2
     m_Bits: 512
-  animator: {fileID: 6817589282132869951}
   dataBinding: {fileID: -7203036530613387614}
   attackState:
     speed: 2
     weaponBehaviour: {fileID: 5569457534782560798}
   moveState:
+    player_target: {fileID: 0}
     speed: 1
-  player_target: {fileID: 0}
   timeAttack: 0
 --- !u!114 &-7203036530613387614
 MonoBehaviour:
@@ -20098,7 +20097,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFire: 0
   player_target: {fileID: 0}
-  muzzleFlash: {fileID: 0}
+  muzzleFlash: {fileID: 4038688487621583204}
 --- !u!1 &6817589282142283201
 GameObject:
   m_ObjectHideFlags: 0

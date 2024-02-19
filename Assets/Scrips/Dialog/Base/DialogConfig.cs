@@ -10,7 +10,8 @@ public enum DialogIndex
     WeaponInfoDialog=4,
     QuitDialog=5,
     PauseDialog =6,
-    DeckEquipDialog =7
+    DeckEquipDialog =7, 
+    InputNameDialog=8
 }
 public class DialogParam
 {
@@ -44,5 +45,6 @@ public class DialogConfig
         DialogIndex.QuitDialog,
         DialogIndex.PauseDialog,
         DialogIndex.DeckEquipDialog,
+        DialogIndex.InputNameDialog,
     };
 }

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
@@ -43,19 +43,38 @@ public static class DataTrigger
 
 public class DataModel : MonoBehaviour
 {
+    private static DataModel _instance;
+    public static DataModel Instance { get { return _instance; } }
+
     private PlayerData playerData;
     public List<GunData> deck;
+
+    public event Action<string> OnNicknameUpdated;
+
+   
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            _instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+    }
 
     public void InitData(Action callback)
     {
         if (!LoadData())
         {
-            
+
             playerData = new PlayerData();
             PlayerInfo info = new PlayerInfo();
-            info.nickname = "MynameisGiao";
+            info.nickname = PlayerPrefs.GetString("PlayerNickname", "PlayerName");
             info.level = 1;
-            info.deck  = deck;
+            info.deck = deck;
             playerData.info = info;
 
             PlayerInventory inventory = new PlayerInventory();
@@ -81,7 +100,6 @@ public class DataModel : MonoBehaviour
         }
 
     }
-
 
     public T ReadData<T>(string path)
     {
@@ -201,6 +219,24 @@ public class DataModel : MonoBehaviour
         }
         return dataReturn;
     }
+
+    // Hàm cập nhật nick name
+    public void UpdateNickname(string newNickname)
+    {
+        if (string.IsNullOrEmpty(newNickname))
+        {
+            newNickname = "PlayerName";
+        }
+
+        Debug.LogError("Nickname: " + newNickname);
+        playerData.info.nickname = newNickname;
+        SaveData();
+
+        OnNicknameUpdated?.Invoke(newNickname);
+    }
+
+
+
     private bool LoadData()
     {
         if (PlayerPrefs.HasKey("LOCAL_DATA"))

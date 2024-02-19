@@ -12,7 +12,7 @@ using UnityEditor.Experimental.GraphView;
 public class TopBarController : MonoBehaviour
 {
     public RectTransform parent;
-    public TMP_Text nick_lb;
+    public Text nick_lb;
     public Text level_lb;
     public Text voucher_lb;
     public Text gold_lb;
@@ -21,8 +21,20 @@ public class TopBarController : MonoBehaviour
 
     public GameObject Left_obj; 
     public GameObject Setting_obj;
-   
 
+    private DataModel dataModel;
+
+    private void Awake()
+    {
+        dataModel = DataModel.Instance;
+
+        dataModel.OnNicknameUpdated += UpdateNicknameUI;
+    }
+    private void UpdateNicknameUI(string newNickname)
+    {
+        nick_lb.text = newNickname;
+    }
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -81,6 +93,12 @@ public class TopBarController : MonoBehaviour
         }
        
     }
+    private void DataInfoChange(object data)
+    {
+        string newNickname = data.ToString();
+        nick_lb.text = newNickname; // Cập nhật UI với nick name mới
+        DataModel.Instance.UpdateNickname(newNickname); // Cập nhật nick name trong DataModel
+    }
     private void DataGoldChange(object data)
     {
         int cur_gold = gold;
@@ -103,13 +121,17 @@ public class TopBarController : MonoBehaviour
         ViewManager.instance.SwitchView(ViewIndex.MissionView);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+
     }
     private void OnDisable()
     {
         DataTrigger.UnRegisterValueChange(DataSchema.GOLD, DataGoldChange);
+    }
+
+    public void ShowInputName()
+    {
+        DialogManager.instance.ShowDialog(DialogIndex.InputNameDialog);
     }
 }
