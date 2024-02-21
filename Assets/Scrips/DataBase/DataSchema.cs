@@ -25,7 +25,6 @@ public class PlayerData
 public class PlayerInfo
 {
     public string nickname;
-    public int level;
     [SerializeField]
     public List<GunData> deck = new List<GunData>();
 }

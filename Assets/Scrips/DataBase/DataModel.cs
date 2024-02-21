@@ -73,7 +73,6 @@ public class DataModel : MonoBehaviour
             playerData = new PlayerData();
             PlayerInfo info = new PlayerInfo();
             info.nickname = PlayerPrefs.GetString("PlayerNickname", "PlayerName");
-            info.level = 1;
             info.deck = deck;
             playerData.info = info;
 

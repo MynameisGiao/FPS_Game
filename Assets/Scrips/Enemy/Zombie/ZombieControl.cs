@@ -11,7 +11,7 @@ public class ZombieControl : EnemyControl
     public ZB_DeadState deadState;
 
     public float timeAttack;
-
+    
 
     public override void Setup(EnemyInitData enemyInitData)
     {
@@ -37,16 +37,15 @@ public class ZombieControl : EnemyControl
 
     public override void OnDamage(WeaponData data)
     {
-       
-        if (cur_State != deadState)
+        if (isDead == false)
         {
             cur_hp -= data.cf.Damage;
             if (cur_hp <= 0)
             {
+                isDead = true;
                 GotoState(deadState);
+
             }
         }
-        else if (cur_State == deadState)
-            return;
     }
 }

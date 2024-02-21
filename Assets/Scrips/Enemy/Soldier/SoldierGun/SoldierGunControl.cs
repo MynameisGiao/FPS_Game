@@ -12,7 +12,8 @@ public class SoldierGunControl : EnemyControl
 
     
     public float timeAttack;
-
+    public AudioSource fire;
+   
 
     public override void Setup(EnemyInitData enemyInitData)
     {
@@ -31,25 +32,35 @@ public class SoldierGunControl : EnemyControl
     protected override void Update()
     {
         base.Update();
-        timeAttack += Time.deltaTime;
-
+        if (isDead==true)
+        {
+            timeAttack = 0;
+        } else 
+        { 
+            timeAttack += Time.deltaTime;
+        }
+        
+        
     }
 
     public override void OnDamage(WeaponData data)
     {
-
-
-        if (cur_State != deadState)
+        if (isDead == false)
         {
             cur_hp -= data.cf.Damage;
             if (cur_hp <= 0)
             {
+                isDead = true;
+                timeAttack = 0;
+                cur_hp = 0;
+                attackState.weaponBehaviour.enabled = false;
+                attackState.weaponBehaviour.isFire = false;
+                fire.enabled = false;
+
                 GotoState(deadState);
             }
         }
-        else if (cur_State == deadState)
-            return;
     }
 
-  
+
 }

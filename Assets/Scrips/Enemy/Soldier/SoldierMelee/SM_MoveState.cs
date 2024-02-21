@@ -26,7 +26,7 @@ public class SM_MoveState : FSM_State
         if (coroutine_dt_player != null)
             parent.StopCoroutine(coroutine_dt_player);
         coroutine_dt_player = parent.StartCoroutine(LoopDetectPlayer());
-
+        parent.running_sound.enabled = false;
 
     }
     public override void Update()

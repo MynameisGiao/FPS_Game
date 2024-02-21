@@ -12,9 +12,7 @@ public class WeaponControl : MonoBehaviour
     public List<int> gun_ids;
     public Transform anchor_gun;    
     public UnityEvent<WeaponBehavior> OnGunChangeEvent;
-    // Start is called before the first frame update
-
-    // Lấy gun_ids từ GetDeck thay vì sử dụng list được khai báo
+ 
     
 IEnumerator Start()
     {
@@ -75,6 +73,8 @@ IEnumerator Start()
             index_gun = 0;
         if (current_WP != null)
         {
+
+            current_WP.CancelReload(); 
             current_WP.OnHideGun(() =>
             {
                 current_WP = weapons[index_gun];

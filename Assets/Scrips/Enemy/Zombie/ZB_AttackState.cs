@@ -13,7 +13,7 @@ public class ZB_AttackState : FSM_State
     private float cur_speed_anim;
     private float delayCheck = 0;
     private bool isAttacking;
-
+    public AudioSource attack_sound;
     public override void Enter(object data)
     {
         base.Enter(data);
@@ -30,7 +30,7 @@ public class ZB_AttackState : FSM_State
         delayCheck += Time.deltaTime;
         base.Update();
 
-        if(!isAttacking )
+        if(!isAttacking && parent.cur_State != parent.deadState)
         {
             if (Vector3.Distance(parent.trans.position, player_target.position) > parent.range_detect * 1.5f)
             {
@@ -43,27 +43,32 @@ public class ZB_AttackState : FSM_State
             float speed_anim = 2; //parent.agent.velocity.magnitude / parent.agent.speed;
             cur_speed_anim = Mathf.Lerp(cur_speed_anim, speed_anim * speed, Time.deltaTime * 5);
             parent.dataBinding.Speed = cur_speed_anim;
-
-            if (delayCheck > 0.5f)
+            parent.running_sound.enabled = true;
+            if (delayCheck > 0.5f && parent.cur_State != parent.deadState)
             {
                 if (parent.agent.remainingDistance <= parent.range_attack + 0.1f)
                 {
                     parent.dataBinding.Speed = 0;
+                    parent.running_sound.enabled = false ;
+                    attack_sound.enabled = true ;
                     if (parent.timeAttack >= parent.cf.Attack_rate)
                     {
                         parent.dataBinding.Attack = true;
-
                         parent.timeAttack = 0;
                     }
 
                 }
                 else
                 {
+                    attack_sound.enabled = false;
+                    parent.running_sound.enabled = true;
                     parent.dataBinding.Speed = cur_speed_anim;
                 }
             }
             else
             {
+                attack_sound.enabled = false;
+                parent.running_sound.enabled = true;
                 parent.dataBinding.Speed = cur_speed_anim;
             }
         }
@@ -81,18 +86,19 @@ public class ZB_AttackState : FSM_State
     public override void OnAnimMiddle()
     {
         base.OnAnimMiddle();
+
         if (Vector3.Distance(parent.trans.position, player_target.position) <= parent.range_attack + 0.1f)
         {
-            Debug.LogError("Attack " + parent.damage);
             MissionManager.instance.OnDamage(parent.damage);
         }
-
     }
 
     public override void OnAnimExit()
     {
         base.OnAnimExit();
-        isAttacking=false;
+       
+        isAttacking =false;
+       
     }
     private void UpdateRotationTarget()
     {

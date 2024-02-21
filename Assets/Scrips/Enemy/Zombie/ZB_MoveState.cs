@@ -28,6 +28,7 @@ public class ZB_MoveState : FSM_State
             parent.StopCoroutine(coroutine_dt_player);
         coroutine_dt_player = parent.StartCoroutine(LoopDetectPlayer());
 
+        parent.running_sound.enabled = false;
 
     }
     public override void Update()
@@ -42,7 +43,7 @@ public class ZB_MoveState : FSM_State
 
 
         float distanceToTarget = Vector3.Distance(parent.transform.position, target.position);
-        if (distanceToTarget <= 2f)
+        if (distanceToTarget <= 5f)
         {
 
             SetTarget();

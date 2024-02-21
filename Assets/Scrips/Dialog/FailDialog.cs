@@ -8,11 +8,13 @@ public class FailDialog : BaseDialog
     {
         base.OnShowDialog();
         Time.timeScale = 0;
+        AudioListener.pause = true;
     }
     public override void OnHideDialog()
     {
         base.OnHideDialog();
         Time.timeScale = 1;
+        AudioListener.pause = false;
     }
     void Start()
     {

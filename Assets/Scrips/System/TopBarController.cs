@@ -8,12 +8,13 @@ using System;
 using UnityEngine.UI;
 using DG.Tweening;
 using UnityEditor.Experimental.GraphView;
+using System.Security.Cryptography;
+using Unity.VisualScripting.FullSerializer;
 
 public class TopBarController : MonoBehaviour
 {
     public RectTransform parent;
     public Text nick_lb;
-    public Text level_lb;
     public Text voucher_lb;
     public Text gold_lb;
     private int gold;
@@ -84,7 +85,6 @@ public class TopBarController : MonoBehaviour
         {
             PlayerInfo playerInfo = DataController.instance.GetPlayerInfo();
             nick_lb.text = playerInfo.nickname;
-            level_lb.text = "Level: " + playerInfo.level.ToString();
             voucher_lb.text = DataController.instance.GetVoucher().ToString();
             gold=DataController.instance.GetGold();
             gold_lb.text = gold.ToString();
@@ -130,8 +130,5 @@ public class TopBarController : MonoBehaviour
         DataTrigger.UnRegisterValueChange(DataSchema.GOLD, DataGoldChange);
     }
 
-    public void ShowInputName()
-    {
-        DialogManager.instance.ShowDialog(DialogIndex.InputNameDialog);
-    }
+   
 }

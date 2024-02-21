@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using static UnityEngine.GraphicsBuffer;
+using Unity.IO.LowLevel.Unsafe;
 
 [Serializable]
 public class SG_AttackState : FSM_State
@@ -33,61 +34,71 @@ public class SG_AttackState : FSM_State
     public override void Update()
     {
         base.Update();
-        delayCheck += Time.deltaTime;
-        if(!isAttacking)
+        if (parent.isDead == false && parent.cur_State != parent.deadState)
         {
-            if (Vector3.Distance(parent.trans.position, player_target.position) > parent.range_detect * 1.5f)
+            delayCheck += Time.deltaTime;
+            if (!isAttacking && parent.isDead == false)
             {
-                parent.GotoState(parent.moveState);
-                return;
-            }
-
-            parent.agent.SetDestination(player_target.position);
-            UpdateRotationTarget();
-            float speed_anim = 2; //parent.agent.velocity.magnitude / parent.agent.speed;
-            cur_speed_anim = Mathf.Lerp(cur_speed_anim, speed_anim * speed, Time.deltaTime * 5);
-            parent.dataBinding.Speed = cur_speed_anim;
-            if (delayCheck > 0.5f)
-            {
-                if (parent.agent.remainingDistance <= parent.range_attack + 0.1f)
+                if (Vector3.Distance(parent.trans.position, player_target.position) > parent.range_detect * 1.5f)
                 {
-                    parent.dataBinding.Speed = 0;
-                    UpdateRotationTarget();
-                    if (parent.timeAttack >= parent.cf.Attack_rate)
-                    {                   
-                        parent.timeAttack = 0;
+                    parent.GotoState(parent.moveState);
+                    return;
+                }
 
-                        SoldierGunData soldierGunData = new SoldierGunData();
-                        if (!is_InitGun)
+                parent.agent.SetDestination(player_target.position);
+                UpdateRotationTarget();
+                float speed_anim = 2; //parent.agent.velocity.magnitude / parent.agent.speed;
+                cur_speed_anim = Mathf.Lerp(cur_speed_anim, speed_anim * speed, Time.deltaTime * 5);
+                parent.dataBinding.Speed = cur_speed_anim;
+                parent.running_sound.enabled = true;
+                if (delayCheck > 0.5f && parent.isDead == false)
+                {
+                    if (parent.agent.remainingDistance <= parent.range_attack + 0.1f && parent.isDead == false)
+                    {
+                        parent.dataBinding.Speed = 0;
+                        parent.running_sound.enabled = false;
+                        UpdateRotationTarget();
+                        if (parent.timeAttack >= parent.cf.Attack_rate && parent.isDead == false)
                         {
-                            is_InitGun = true;
-                            soldierGunData.sg_Control = parent;
-                            soldierGunData.damage = parent.damage;
-                            soldierGunData.rof = parent.attack_speed;
-                            weaponBehaviour.SetupGun(soldierGunData);
-                           
-                          
-                        }
-                        weaponBehaviour.enabled = true;
-                        weaponBehaviour.isFire = true;
-                        weaponBehaviour.player_target = player_target;
-                     
-                       
-                    }
+                            parent.timeAttack = 0;
 
+                            SoldierGunData soldierGunData = new SoldierGunData();
+                            if (!is_InitGun && parent.isDead == false)
+                            {
+                                is_InitGun = true;
+                                soldierGunData.sg_Control = parent;
+                                soldierGunData.damage = parent.damage;
+                                soldierGunData.rof = parent.attack_speed;
+                                weaponBehaviour.SetupGun(soldierGunData);
+
+
+                            }
+                            weaponBehaviour.enabled = true;
+                            weaponBehaviour.isFire = true;
+                            parent.fire.enabled = true;
+                            weaponBehaviour.player_target = player_target;
+
+
+                        }
+
+                    }
+                    else
+                    {
+                        weaponBehaviour.enabled = false;
+                        weaponBehaviour.isFire = false;
+                        parent.fire.enabled = false;
+                        parent.dataBinding.Speed = cur_speed_anim;
+                        parent.running_sound.enabled = true;
+                    }
                 }
                 else
                 {
-                    weaponBehaviour.enabled = false;
-                    weaponBehaviour.isFire = false;
                     parent.dataBinding.Speed = cur_speed_anim;
+                    parent.running_sound.enabled = true;
                 }
             }
-            else
-            {
-                parent.dataBinding.Speed = cur_speed_anim;
-            }
         }
+        
 
     }
     public override void OnAnimEnter()
@@ -121,7 +132,15 @@ public class SG_AttackState : FSM_State
         Quaternion q = Quaternion.LookRotation(dir, Vector3.up);
         parent.trans.rotation = q;
     }
-    
+    public override void Exit()
+    {
+        base.Exit();
+        parent.agent.stoppingDistance = 0;
+        parent.agent.isStopped = true;
+        parent.dataBinding.Speed = 0;
+        delayCheck = 0;
+    }
+  
 }
         
         

@@ -9,16 +9,17 @@ public class SG_DeadState : FSM_State
 {
     [NonSerialized]
     public SoldierGunControl parent;
+   
     public override void Enter()
     {
         base.Enter();
+        parent.timeAttack = 0;
         parent.dataBinding.Dead = true;
-
+      
     }
     public override void OnAnimMiddle()
     {
         base.OnAnimMiddle();
-        Debug.LogError("Exit");
         parent.OnDead();
 
     }

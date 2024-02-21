@@ -197,7 +197,7 @@ public class WeaponBehavior : MonoBehaviour
             else if (hitInfo.collider.CompareTag("Enemy"))
             {
                 EnemyControl enemy = hitInfo.collider.GetComponent<EnemyControl>();
-                if (enemy != null)
+                if (enemy != null && enemy.isDead == false)
                 {
                     enemyControl = enemy;
                     impact = BYPoolManager.instance.GetPool("Impact Blood").Spawn();
@@ -253,7 +253,22 @@ public class WeaponBehavior : MonoBehaviour
         }
 
     }
+    public void CancelReload()
+    {
+        if (isReloading)
+        {
+            if (isShotGun)
+            {
+                StopCoroutine("ReloadProgressShotGun");
+            }
+            else
+            {
+                StopCoroutine("ReloadProgress");
+            }
 
+            isReloading = false;
+        }
+    }
     IEnumerator ReloadProgressShotGun()
     {
         isReloading = true;
@@ -314,6 +329,7 @@ public class WeaponBehavior : MonoBehaviour
         OnAmmoChange?.Invoke(number_bullet, total);
 
     }
+
     public void OnHideGun(Action callback)
     {
         animator.Play("Hide", 0, 0);
@@ -336,5 +352,7 @@ public class WeaponBehavior : MonoBehaviour
         OnAmmoChange?.Invoke(number_bullet, total);
     }
 
+   
+   
    
 }

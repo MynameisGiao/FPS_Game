@@ -27,7 +27,6 @@ public class UIInGame : MonoBehaviour
     {
         cur_wp.OnAmmoChange.AddListener(OnAmmoChange);
         string name_image = cur_wp.weaponData.cf.Prefab;
-       // iconFire_Button.overrideSprite=SpriteLibControl.instance.GetSpriteByName(name_image); 
         iconGun.overrideSprite = SpriteLibControl.instance.GetSpriteByName(name_image);
         lockObject.SetActive(false);
     }

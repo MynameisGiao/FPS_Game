@@ -48,7 +48,14 @@ public class WeaponInfoDialog : BaseDialog
         name_lb.text = cf_gun.Name.ToString();
         rof.text = "ROF: " + cf_gun.ROF.ToString();
         clip_size.text = "Clip Size: " + cf_gun.ClipSize.ToString();
-        damage.text = "Damage: " + cf_gun.Damage.ToString();
+        if (name_lb.text == "ShotGun")
+        {
+            damage.text = "Damage: " + (cf_gun.Damage * 5).ToString()+" / 5 bullets";
+        }
+        else
+        {
+            damage.text = "Damage: " + cf_gun.Damage.ToString();
+        }
         recoil.text = "Recoil: " + cf_gun.Recoil.ToString();
        
         weapon_icon.overrideSprite = SpriteLibControl.instance.GetSpriteByName(cf_gun.Image);

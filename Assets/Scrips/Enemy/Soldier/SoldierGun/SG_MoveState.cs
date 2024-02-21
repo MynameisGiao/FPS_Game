@@ -28,25 +28,29 @@ public class SG_MoveState : FSM_State
             parent.StopCoroutine(coroutine_dt_player);
         coroutine_dt_player = parent.StartCoroutine(LoopDetectPlayer());
 
-
+        parent.running_sound.enabled = false;
     }
     public override void Update()
     {
-        delayCheck += Time.deltaTime;
-        base.Update();
-        parent.agent.SetDestination(target.position);
-        UpdateRotation();
-        float speed_anim = parent.agent.velocity.magnitude / parent.agent.speed;
-        cur_speed_anim = Mathf.Lerp(cur_speed_anim, speed_anim * speed, Time.deltaTime * 5);
-        parent.dataBinding.Speed = cur_speed_anim;
-
-
-        float distanceToTarget = Vector3.Distance(parent.transform.position, target.position);
-        if (distanceToTarget <= 5f)
+        if(parent.isDead==false)
         {
+            delayCheck += Time.deltaTime;
+            base.Update();
+            parent.agent.SetDestination(target.position);
+            UpdateRotation();
+            float speed_anim = parent.agent.velocity.magnitude / parent.agent.speed;
+            cur_speed_anim = Mathf.Lerp(cur_speed_anim, speed_anim * speed, Time.deltaTime * 5);
+            parent.dataBinding.Speed = cur_speed_anim;
 
-            SetTarget();
+
+            float distanceToTarget = Vector3.Distance(parent.transform.position, target.position);
+            if (distanceToTarget <= 5f)
+            {
+
+                SetTarget();
+            }
         }
+       
 
     }
     IEnumerator LoopDetectPlayer()

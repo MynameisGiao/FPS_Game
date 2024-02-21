@@ -32,7 +32,8 @@ public class EnemyControl : FSM_System
     public LayerMask mask_player;
     public Action<int, int, int> OnHpChange;
 
-    
+    public AudioSource running_sound;
+    public bool isDead;
 
     public virtual void Setup(EnemyInitData enemyInitData)
     {

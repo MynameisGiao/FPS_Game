@@ -21,7 +21,13 @@ public class MissionManager : BYSingletonMono<MissionManager>
      private int max_hp = 200;
     public UnityEvent<int, int,int> OnHpChange;
     private bool isEndMission = false;
-    
+
+    private IngameView ingameView;
+
+    public void SetIngameViewReference(IngameView view)
+    {
+        ingameView = view;
+    }
     IEnumerator Start()
     {
         cf_mission = GameManager.instance.cur_cf_mission;
@@ -87,8 +93,15 @@ public class MissionManager : BYSingletonMono<MissionManager>
    
     public void OnDamage(int  damage)
     {
+        ingameView.take_damage.SetActive(true);
         cur_hp -= damage;
-        if(cur_hp <= 0)
+        if(cur_hp > 0)
+        {
+            OnHpChange?.Invoke(damage, max_hp, cur_hp);
+           
+
+        }
+        else
         {
             // fall
             cur_hp = 0;
@@ -99,18 +112,14 @@ public class MissionManager : BYSingletonMono<MissionManager>
                 DialogManager.instance.ShowDialog(DialogIndex.FailDialog);
                 isEndMission = true;
             }
-           
         }
-        else
-        {
-            OnHpChange?.Invoke(damage, max_hp, cur_hp);
-        }
-
+        StartCoroutine("WaitDame");
     }
 
     public void PlusHP()
     {
-        if(cur_hp <= max_hp-20)
+        ingameView.plus_hp.SetActive(true);
+        if (cur_hp <= max_hp-20)
         {
             cur_hp += 20;
             OnHpChange?.Invoke(0, max_hp, cur_hp);
@@ -121,7 +130,16 @@ public class MissionManager : BYSingletonMono<MissionManager>
             cur_hp += plus;
             OnHpChange?.Invoke(0, max_hp, cur_hp);
         }
-        
+        StartCoroutine("WaitHp");
     }
-
+    IEnumerator WaitHp()
+    {
+        yield return new WaitForSeconds(1f);
+        ingameView.plus_hp.SetActive(false);
+    }
+    IEnumerator WaitDame()
+    {
+        yield return new WaitForSeconds(0.5f);
+        ingameView.take_damage.SetActive(false);
+    }
 }

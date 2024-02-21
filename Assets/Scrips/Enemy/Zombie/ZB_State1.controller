@@ -87,7 +87,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _system: {fileID: 0}
-  time_middle: 0.6
+  time_middle: 0.7
 --- !u!1102 &-3426569516637249440
 AnimatorState:
   serializedVersion: 6

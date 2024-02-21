@@ -44,7 +44,7 @@ MonoBehaviour:
     rof: 0.6
     clipsize: 7
     total: 200
-    damage: 50
+    damage: 30
     recoil: 0.5
     fov_normal: 45
     fov_zoom: 20
@@ -68,7 +68,7 @@ MonoBehaviour:
     rof: 0.1
     clipsize: 30
     total: 800
-    damage: 25
+    damage: 22
     recoil: 0.2
     fov_normal: 45
     fov_zoom: 30
@@ -92,7 +92,7 @@ MonoBehaviour:
     rof: 0.4
     clipsize: 5
     total: 800
-    damage: 35
+    damage: 7
     recoil: 1
     fov_normal: 45
     fov_zoom: 30
