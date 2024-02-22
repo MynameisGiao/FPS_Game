@@ -9,6 +9,7 @@ public class DialogManager : BYSingletonMono<DialogManager>
     public RectTransform anchor_dl;
     private Dictionary<DialogIndex, BaseDialog> dic = new Dictionary<DialogIndex, BaseDialog>();
     private List<BaseDialog> ls_dialog = new List<BaseDialog>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +26,6 @@ public class DialogManager : BYSingletonMono<DialogManager>
     }
     public void ShowDialog(DialogIndex index,DialogParam param=null,Action callback=null)
     {
-        Debug.Log("Hiển thị dialog: " + index.ToString());
         BaseDialog dl = dic[index];
 
         Action cb = () =>
@@ -46,7 +46,6 @@ public class DialogManager : BYSingletonMono<DialogManager>
 
     public void HideDialog(DialogIndex index,  Action callback=null)
     {
-        Debug.Log("Hide dialog: " + index.ToString());
         BaseDialog dl = dic[index];
 
         Action cb = () =>

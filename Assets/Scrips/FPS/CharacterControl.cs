@@ -6,6 +6,7 @@ using UnityEngine;
 public class CharacterControl : MonoBehaviour
 {
     public CharacterController characterController_;
+    public float speed_char;
     private float vel_y;
     // Start is called before the first frame update
     void Start()
@@ -15,18 +16,18 @@ public class CharacterControl : MonoBehaviour
     private void OnJump()
     {
         // set jump force
-        if(characterController_.isGrounded)
+        if (characterController_.isGrounded)
             vel_y = 3.5f;
     }
     // Update is called once per frame
     void Update()
     {
         Vector3 move_dir = InputManager.move_Dir;
-        float speed=InputManager.isRun ? 2:1;
-        move_dir=transform.TransformDirection(move_dir);
+        float speed = InputManager.isRun ? 2 : 1;
+        move_dir = transform.TransformDirection(move_dir);
 
         // x= x0 - v*a*t*t;
-        if(vel_y > 0)
+        if (vel_y > 0)
         {
             move_dir.y = vel_y;
         }
@@ -35,27 +36,27 @@ public class CharacterControl : MonoBehaviour
             if (!characterController_.isGrounded)
             {
                 move_dir.y = vel_y;
-                if(move_dir.y <-2)
+                if (move_dir.y < -2)
                 {
                     move_dir.y = -2;
                 }
             }
         }
 
-       
+
         move_dir.Normalize();
         // v=v0 + at;
-        vel_y=vel_y - 9.8f*Time.deltaTime;
+        vel_y = vel_y - 9.8f * Time.deltaTime;
 
-        characterController_.Move(move_dir * Time.deltaTime *3.0f* speed);
-       
+        characterController_.Move(move_dir * Time.deltaTime * speed_char * speed);
+
     }
 
 
     public virtual void OnDamage(DamageData damageData)
     {
-        Debug.LogError("Damage: "+ damageData);
-       // Destroy(gameObject);
+        Debug.LogError("Damage: " + damageData);
+        // Destroy(gameObject);
     }
 
 }

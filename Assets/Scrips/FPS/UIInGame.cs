@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class UIInGame : MonoBehaviour
-{ 
+{
     public Joystick joystick;
     public RectTransform btnFire;
     public Image iconFire_Button;
@@ -13,7 +13,7 @@ public class UIInGame : MonoBehaviour
     public WeaponControl weaponControl;
     public GameObject lockObject;
 
-   
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +21,7 @@ public class UIInGame : MonoBehaviour
 
         weaponControl.OnGunChangeEvent.AddListener(OnWeaponChange);
 
-        
+
     }
     private void OnWeaponChange(WeaponBehavior cur_wp)
     {
@@ -32,7 +32,7 @@ public class UIInGame : MonoBehaviour
     }
     private void OnAmmoChange(int number, int total)
     {
-        ammo_lb.text = number.ToString()+ "/"+total.ToString();
+        ammo_lb.text = number.ToString() + "/" + total.ToString();
     }
     // Update is called once per frame
     void Update()

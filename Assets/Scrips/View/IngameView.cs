@@ -17,6 +17,7 @@ public class IngameView : BaseView
         take_damage.SetActive(false);
         plus_hp.SetActive(false);
         hp_fg.color = Color.white;
+       ViewManager.instance.music.enabled = false;
     }
 
 
@@ -41,6 +42,7 @@ public class IngameView : BaseView
         MissionManager.instance.SetIngameViewReference(this);
         MissionManager.instance.OnWaveChange.AddListener(OnWaveChange);
         MissionManager.instance.OnHpChange.AddListener(OnHpChange);
+
     }
 
     private void OnHpChange(int damage, int max_hp, int cur_hp)
@@ -82,7 +84,7 @@ public class IngameView : BaseView
 
     public override void OnHideView()
     {
-
+        ViewManager.instance.music.enabled = true;
     }
 
    

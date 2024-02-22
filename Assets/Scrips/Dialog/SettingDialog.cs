@@ -5,19 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SettingDialog : BaseDialog
 {
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    
     private bool showPauseDialog = false;
 
     public override void Setup(DialogParam param)
@@ -32,6 +20,7 @@ public class SettingDialog : BaseDialog
     }
     public void OnClose()
     {
+   
         DialogManager.instance.HideDialog(DialogIndex.SettingDialog);
 
         if (showPauseDialog)

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +12,8 @@ public class ViewManager : BYSingletonMono<ViewManager>
     private Dictionary<ViewIndex,BaseView> dic_View = new Dictionary<ViewIndex,BaseView>();
     public BaseView cur_view = null;
     // Start is called before the first frame update
+
+    public AudioSource music;
     void Start()
     {
         foreach(ViewIndex view_index in ViewConfig.viewIndies)
@@ -28,7 +30,8 @@ public class ViewManager : BYSingletonMono<ViewManager>
     
     public void SwitchView(ViewIndex viewIndex, ViewParam param =null, Action callback=null)
     {
-        if(cur_view!=null)
+        
+        if (cur_view!=null)
         {
             OnViewHide?.Invoke(cur_view);
             Action cb = () =>
@@ -48,6 +51,7 @@ public class ViewManager : BYSingletonMono<ViewManager>
     }
     private void ShowNewView(ViewParam param =null, Action callback=null)
     {
+      
         cur_view.gameObject.SetActive(true);
         cur_view.Setup(param);
         OnViewShow?.Invoke(cur_view);
@@ -57,4 +61,5 @@ public class ViewManager : BYSingletonMono<ViewManager>
         };
         cur_view.SendMessage("ShowView", cb,SendMessageOptions.RequireReceiver);
     }
+    
 }

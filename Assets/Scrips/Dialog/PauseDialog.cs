@@ -11,6 +11,7 @@ public class PauseDialog : BaseDialog
         base.OnShowDialog();
         Time.timeScale = 0;
         AudioListener.pause = true;
+      
     }
     public override void OnHideDialog()
     {
@@ -26,15 +27,19 @@ public class PauseDialog : BaseDialog
     }
     public void OnQuitDialog()
     {
+      
         DialogManager.instance.HideDialog(DialogIndex.PauseDialog);
         DialogManager.instance.ShowDialog(DialogIndex.QuitDialog);
     }
     public void OnSettingDialog()
     {
+        
         DialogManager.instance.ShowDialog(DialogIndex.SettingDialog, new SettingDialogParam { isShowPause = true });
     }
     public void OnRestart()
     {
+
+        
         // Gọi hàm để load lại scene hiện tại
         DialogManager.instance.HideDialog(DialogIndex.PauseDialog);
         LoadSceneManager.instance.ReloadCurrentScene();

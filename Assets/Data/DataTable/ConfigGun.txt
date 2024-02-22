@@ -1,9 +1,9 @@
 id	name	image	prefab	rof	clipsize	total	damage	recoil	fov_normal	fov_zoom	price
-1	HandGun	HandGun_icon	HandGun	0.3	9	200	9	0.2	45	35	0
-2	AK	AK_icon	AK	0.15	30	800	20	0.3	45	30	0
+1	HandGun	HandGun_icon	HandGun	0.3	9	200	7	0.2	45	35	0
+2	AK	AK_icon	AK	0.15	30	800	15	0.3	45	30	0
 3	Sniper	Sniper_icon	Sniper	0.6	7	200	30	0.5	45	20	600
-4	M416	M416_icon	M416	0.15	30	800	20	0.3	45	30	350
-5	Groza	Groza_icon	Groza	0.1	30	800	22	0.2	45	30	500
-6	Scar_L	Scar_L_icon	Scar_L	0.15	30	800	20	0.3	45	30	400
-7	ShotGun	ShotGun_icon	ShotGun	0.4	5	800	7	1	45	30	280
-8	Vector	Vector_icon	Vector	0.1	20	800	18	0.2	45	30	310
+4	M416	M416_icon	M416	0.15	30	800	15	0.3	45	30	350
+5	Groza	Groza_icon	Groza	0.1	30	800	17	0.2	45	30	500
+6	Scar_L	Scar_L_icon	Scar_L	0.15	30	800	15	0.3	45	30	400
+7	ShotGun	ShotGun_icon	ShotGun	0.4	5	800	4	1	45	30	280
+8	Vector	Vector_icon	Vector	0.1	20	800	13	0.2	45	30	310

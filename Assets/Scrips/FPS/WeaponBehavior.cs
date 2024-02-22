@@ -176,7 +176,7 @@ public class WeaponBehavior : MonoBehaviour
         RaycastHit hitInfo;
         if (Physics.Raycast(RayOrigin, out hitInfo, 100f, mask))
         {
-            
+
             Transform impact = null;
             if (hitInfo.collider.CompareTag("SoftBody"))
             {
@@ -202,10 +202,10 @@ public class WeaponBehavior : MonoBehaviour
                     enemyControl = enemy;
                     impact = BYPoolManager.instance.GetPool("Impact Blood").Spawn();
                     enemyControl.OnDamage(this.weaponData);
-                   
-                   
+
+
                 }
-               
+
             }
 
             if (impact != null)
@@ -352,7 +352,7 @@ public class WeaponBehavior : MonoBehaviour
         OnAmmoChange?.Invoke(number_bullet, total);
     }
 
-   
-   
-   
+
+
+
 }

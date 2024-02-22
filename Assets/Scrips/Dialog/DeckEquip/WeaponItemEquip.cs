@@ -11,6 +11,7 @@ public class WeaponItemEquip : MonoBehaviour
     private ConfigGunRecord config_gun;
     private int index;
 
+    public AudioSource sfx;
 
     public void Setup(GunData data, GunData cur_gunData, int index)
     {
@@ -22,9 +23,11 @@ public class WeaponItemEquip : MonoBehaviour
         name_lb.text = config_gun.Name;
         weapon_Icon.overrideSprite = SpriteLibControl.instance.GetSpriteByName(config_gun.Image);
 
+        sfx.enabled = false;
     }
     public void OnSelect()
     {
+        sfx.enabled=true;
         DialogManager.instance.HideDialog(DialogIndex.DeckEquipDialog);
         DataController.instance.ChangeDeck(cur_gunData, index);
 

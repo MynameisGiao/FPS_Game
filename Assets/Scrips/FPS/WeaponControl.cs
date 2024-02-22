@@ -10,13 +10,13 @@ public class WeaponControl : MonoBehaviour
     public WeaponBehavior current_WP;
     private int index_gun = -1;
     public List<int> gun_ids;
-    public Transform anchor_gun;    
+    public Transform anchor_gun;
     public UnityEvent<WeaponBehavior> OnGunChangeEvent;
- 
-    
-IEnumerator Start()
+
+
+    IEnumerator Start()
     {
-        yield return  new WaitUntil(()=>SceneManager.GetActiveScene().buildIndex>1);
+        yield return new WaitUntil(() => SceneManager.GetActiveScene().buildIndex > 1);
 
         yield return new WaitForSeconds(3);
 
@@ -74,7 +74,7 @@ IEnumerator Start()
         if (current_WP != null)
         {
 
-            current_WP.CancelReload(); 
+            current_WP.CancelReload();
             current_WP.OnHideGun(() =>
             {
                 current_WP = weapons[index_gun];

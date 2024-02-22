@@ -44,6 +44,9 @@ public class LoadSceneManager : BYSingletonMono<LoadSceneManager>
         }
         callback?.Invoke();
         ui_object.SetActive(false);
+
+        PlayMusic();
+      
     }
     public void LoadSceneByIndex(int scene_index, Action callback)
     {
@@ -72,8 +75,14 @@ public class LoadSceneManager : BYSingletonMono<LoadSceneManager>
         }
         callback?.Invoke();
         ui_object.SetActive(false);
+
+        PlayMusic();
     }
 
+    void PlayMusic()
+    {
+        ViewManager.instance.music.enabled = true;
+    }
     // Restart
     public void ReloadCurrentScene()
     {

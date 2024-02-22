@@ -17,7 +17,6 @@ public class DeckEquipDialog : BaseDialog
         cur_GunData = dl_param.gunData;
 
         List<GunData> decks = DataController.instance.GetDeck();
-        Debug.LogError("Vào DECK!!!!! " + decks.Count);
         for (int i = 0; i < decks.Count; i++)
         {
             deck_items[i].Setup(decks[i], cur_GunData,i);
@@ -26,6 +25,7 @@ public class DeckEquipDialog : BaseDialog
         ConfigGunRecord config_gun = ConfigManager.instance.configGun.GetRecordBykeySearch(cur_GunData.id);
         name_lb.text = config_gun.Name;
         weapon_Icon.overrideSprite = SpriteLibControl.instance.GetSpriteByName(config_gun.Image);
+
 
     }
 

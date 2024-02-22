@@ -21,7 +21,8 @@ public class WeaponInfoDialog : BaseDialog
     private ConfigGunRecord cf_gun;
 
     private GunData data;
-    //private int index;
+
+    public AudioSource sfx;
     private void OnEnable()
     {
         DataTrigger.RegisterValueChange(DataSchema.DECK, DeckDataChange);
@@ -59,8 +60,7 @@ public class WeaponInfoDialog : BaseDialog
         recoil.text = "Recoil: " + cf_gun.Recoil.ToString();
        
         weapon_icon.overrideSprite = SpriteLibControl.instance.GetSpriteByName(cf_gun.Image);
-        Debug.LogError("Load Weapon Done!!!");
-
+       
         data = DataController.instance.GetGunData(cf_gun.ID);
         
        if (data == null)
@@ -90,10 +90,12 @@ public class WeaponInfoDialog : BaseDialog
             }
         }
 
+        sfx.enabled = false;
     }
 
     public void OnSelect()
     {
+        sfx.enabled = true;
         if (btn_select.gameObject.activeSelf == true)
         {
             DeckEquipDialogParam param = new DeckEquipDialogParam();
@@ -105,6 +107,7 @@ public class WeaponInfoDialog : BaseDialog
     }
     public void OnUnlock()
     {
+        sfx.enabled = true;
         DataController.instance.UnlockWeapon(cf_gun, () =>
         {
 

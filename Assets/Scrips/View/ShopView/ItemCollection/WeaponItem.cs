@@ -11,7 +11,9 @@ public class WeaponItem : MonoBehaviour
     public GameObject item_select;
     private ConfigGunRecord config_gun;
     private GunData data;
-  
+
+    public AudioSource sfx;
+   
     public void Setup(ConfigGunRecord cf)
     {
        
@@ -33,10 +35,12 @@ public class WeaponItem : MonoBehaviour
                 item_select.SetActive(true);
             }
         }
+        sfx.enabled = false;
+        
     }
     public void OnItemClick()
     {
-        Debug.LogError("Hiển thị Vũ khí");
+        sfx.enabled=true;
         WeaponInfoDialogParam param = new WeaponInfoDialogParam { cf_gun = config_gun };
         DialogManager.instance.ShowDialog(DialogIndex.WeaponInfoDialog, param);
     }

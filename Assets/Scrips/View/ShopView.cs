@@ -6,11 +6,13 @@ using static UnityEditor.Progress;
 
 public class ShopView : BaseView
 {
-    // đầu game load nhưngx item đã select
+
+    // đầu game load những item đã select
     public DeckItemControl deckItemControl_;  
     public DeckCollectionControl deckCollectionControl_;
     public Transform ShowWeapon;
-   
+
+    public AudioSource sfx;
     public override void Setup(ViewParam param)
     {
         
@@ -20,10 +22,12 @@ public class ShopView : BaseView
 
         deckItemControl_.gameObject.SetActive(false);
         
-      
+       sfx.enabled = false;
+       
     }
     public void ShowHomeView()
     {
+       sfx.enabled = true;
         DialogManager.instance.HideDialog(DialogIndex.WeaponInfoDialog);
         ViewManager.instance.SwitchView(ViewIndex.HomeView);
         

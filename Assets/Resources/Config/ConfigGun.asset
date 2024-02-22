@@ -20,7 +20,7 @@ MonoBehaviour:
     rof: 0.3
     clipsize: 9
     total: 200
-    damage: 9
+    damage: 7
     recoil: 0.2
     fov_normal: 45
     fov_zoom: 35
@@ -32,7 +32,7 @@ MonoBehaviour:
     rof: 0.15
     clipsize: 30
     total: 800
-    damage: 20
+    damage: 15
     recoil: 0.3
     fov_normal: 45
     fov_zoom: 30
@@ -56,7 +56,7 @@ MonoBehaviour:
     rof: 0.15
     clipsize: 30
     total: 800
-    damage: 20
+    damage: 15
     recoil: 0.3
     fov_normal: 45
     fov_zoom: 30
@@ -68,7 +68,7 @@ MonoBehaviour:
     rof: 0.1
     clipsize: 30
     total: 800
-    damage: 22
+    damage: 17
     recoil: 0.2
     fov_normal: 45
     fov_zoom: 30
@@ -80,7 +80,7 @@ MonoBehaviour:
     rof: 0.15
     clipsize: 30
     total: 800
-    damage: 20
+    damage: 15
     recoil: 0.3
     fov_normal: 45
     fov_zoom: 30
@@ -92,7 +92,7 @@ MonoBehaviour:
     rof: 0.4
     clipsize: 5
     total: 800
-    damage: 7
+    damage: 4
     recoil: 1
     fov_normal: 45
     fov_zoom: 30
@@ -104,7 +104,7 @@ MonoBehaviour:
     rof: 0.1
     clipsize: 20
     total: 800
-    damage: 18
+    damage: 13
     recoil: 0.2
     fov_normal: 45
     fov_zoom: 30

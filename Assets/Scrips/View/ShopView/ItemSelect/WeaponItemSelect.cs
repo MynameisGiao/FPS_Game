@@ -12,7 +12,6 @@ public class WeaponItemSelect : MonoBehaviour
 
     public void Setup(GunData data)
     {
-        Debug.LogError("Dang load vu khi");
         config_gun = ConfigManager.instance.configGun.GetRecordBykeySearch(data.id);
         name_lb.text = config_gun.Name;
         weapon_Icon.overrideSprite = SpriteLibControl.instance.GetSpriteByName(config_gun.Image);

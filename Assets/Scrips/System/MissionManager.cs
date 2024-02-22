@@ -50,7 +50,6 @@ public class MissionManager : BYSingletonMono<MissionManager>
         }
         else
         {
-            Debug.LogError("Wave: "+ index_wave);
             ConfigWaveRecord cf_wave = ConfigManager.instance.configWave.GetRecordBykeySearch(waves[index_wave]);
             total_enemy = cf_wave.Enemies.Count;
             count_enemy_create = 0;
