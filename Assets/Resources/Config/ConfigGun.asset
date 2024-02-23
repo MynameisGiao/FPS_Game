@@ -92,7 +92,7 @@ MonoBehaviour:
     rof: 0.4
     clipsize: 5
     total: 800
-    damage: 4
+    damage: 7
     recoil: 1
     fov_normal: 45
     fov_zoom: 30

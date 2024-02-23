@@ -5,5 +5,5 @@ id	name	image	prefab	rof	clipsize	total	damage	recoil	fov_normal	fov_zoom	price
 4	M416	M416_icon	M416	0.15	30	800	15	0.3	45	30	350
 5	Groza	Groza_icon	Groza	0.1	30	800	17	0.2	45	30	500
 6	Scar_L	Scar_L_icon	Scar_L	0.15	30	800	15	0.3	45	30	400
-7	ShotGun	ShotGun_icon	ShotGun	0.4	5	800	4	1	45	30	280
+7	ShotGun	ShotGun_icon	ShotGun	0.4	5	800	7	1	45	30	280
 8	Vector	Vector_icon	Vector	0.1	20	800	13	0.2	45	30	310
