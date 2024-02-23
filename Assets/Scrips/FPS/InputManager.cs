@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -17,7 +17,7 @@ public class InputManager : BYSingletonMono<InputManager>
     public UnityEvent OnReload;
     public bool isKeyBoardMove;
 
-    private Joystick joystick; // Thêm dòng này
+    private Joystick joystick; // ThÃªm dÃ²ng nÃ y
    
     // Start is called before the first frame update
     void Start()
